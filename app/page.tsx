@@ -337,7 +337,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center z-10">
-              <div className="relative w-12 h-12 cursor-pointer group">
+              <div className="relative w-24 h-24 cursor-pointer group">
                 <Image
                   src="/vyllion-logo.png"
                   alt="Vyllion Logo"
