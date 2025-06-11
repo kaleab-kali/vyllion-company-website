@@ -18,6 +18,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vyllion - Luxury Technology Solutions',
+    description: 'Premium technology solutions for elite brands. Specializing in luxury websites, AI-based ERP systems, custom software, and business automation.',
+    creator: '@vyllion',
+    site: '@vyllion',
+    images: ['/vyllion-logo.jpg'],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -33,29 +52,6 @@ export const metadata: Metadata = {
         alt: 'Vyllion - Luxury Technology Solutions',
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Vyllion - Luxury Technology Solutions',
-    description: 'Premium technology solutions for elite brands. Specializing in luxury websites, AI-based ERP systems, custom software, and business automation.',
-    images: ['/vyllion-logo.jpg'],
-    creator: '@vyllion',
-    site: '@vyllion',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-site-verification',
-    yandex: 'your-yandex-verification',
   },
   icons: {
     icon: '/vyllion-logo.jpg',
