@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'Premium technology solutions for elite brands. Specializing in luxury websites, AI-based ERP systems, custom software, and business automation.',
     creator: '@vyllion',
     site: '@vyllion',
-    images: ['/vyllion-logo.jpg'],
+    images: ['/vyllion-logo.png'],
   },
   openGraph: {
     type: 'website',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Vyllion',
     images: [
       {
-        url: '/vyllion-logo.jpg',
+        url: '/vyllion-logo.png',
         width: 1200,
         height: 630,
         alt: 'Vyllion - Luxury Technology Solutions',
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: '/vyllion-logo.jpg',
-    shortcut: '/vyllion-logo.jpg',
-    apple: '/vyllion-logo.jpg',
+    icon: '/vyllion-logo.png',
+    shortcut: '/vyllion-logo.png',
+    apple: '/vyllion-logo.png',
   },
 }
 

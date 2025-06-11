@@ -339,7 +339,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
             <div className="flex items-center z-10">
               <div className="relative w-12 h-12 cursor-pointer group">
                 <Image
-                  src="/vyllion-logo.jpg"
+                  src="/vyllion-logo.png"
                   alt="Vyllion Logo"
                   fill
                   className="object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]"
@@ -893,7 +893,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
             <div className="md:col-span-2">
               <div className="flex items-center mb-6">
                 <div className="relative w-12 h-12 mr-4">
-                  <Image src="/vyllion-logo.jpg" alt="Vyllion Logo" fill className="object-contain" />
+                  <Image src="/vyllion-logo.png" alt="Vyllion Logo" fill className="object-contain" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                   Vyllion

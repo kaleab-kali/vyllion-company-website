@@ -25,7 +25,7 @@ export default function PrivacyPage() {
               <span>Back to Home</span>
             </Link>
             <div className="relative w-10 h-10">
-              <Image src="/vyllion-logo.jpg" alt="Vyllion Logo" fill className="object-contain" />
+              <Image src="/vyllion-logo.png" alt="Vyllion Logo" fill className="object-contain" />
             </div>
           </div>
         </div>
