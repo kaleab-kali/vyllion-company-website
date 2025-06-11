@@ -67,6 +67,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/hero-banner.jpg"
+          as="image"
+          type="image/jpeg"
+        />
+      </head>
       <body>{children}</body>
     </html>
   )

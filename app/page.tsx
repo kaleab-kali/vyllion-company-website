@@ -445,9 +445,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         {/* Current background logic - commented out for testing
         <canvas
           ref={canvasRef}
-          className={`absolute inset-0 w-full h-[200vh] pointer-events-none transition-opacity duration-1000 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className="absolute inset-0 w-full h-[200vh] pointer-events-none"
           style={{ zIndex: 1 }}
         />
 
@@ -464,7 +462,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url("/hero-banner.jpg")', // Replace with your image path
+            backgroundImage: 'url("/hero-banner.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
