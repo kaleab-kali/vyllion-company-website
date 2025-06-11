@@ -442,6 +442,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         ref={heroRef}
         className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20"
       >
+        {/* Current background logic - commented out for testing
         <canvas
           ref={canvasRef}
           className={`absolute inset-0 w-full h-[200vh] pointer-events-none transition-opacity duration-1000 ${
@@ -454,6 +455,25 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
           className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-slate-900/5 to-blue-950/10"
           style={{
             transform: `translateY(${scrollY * 0.2}px)`,
+            zIndex: 2,
+          }}
+        />
+        */}
+
+        {/* New image background logic - uncomment to test */}
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: 'url("/hero-banner.jpg")', // Replace with your image path
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            zIndex: 1,
+          }}
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-slate-900/20 to-blue-950/30"
+          style={{
             zIndex: 2,
           }}
         />
