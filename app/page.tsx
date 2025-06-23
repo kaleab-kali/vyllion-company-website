@@ -38,16 +38,16 @@ export default function VyllionLanding() {
   const heroRef = useRef<HTMLElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [state, setState] = useState<any>(null)
-const [isPending, setIsPending] = useState(false)
+  const [isPending, setIsPending] = useState(false)
 
-const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
-  setIsPending(true);
-  const formData = new FormData(event.currentTarget);
-  const res = await sendContactEmail(formData);
-  setState(res);
-  setIsPending(false);
-};
+  const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsPending(true);
+    const formData = new FormData(event.currentTarget);
+    const res = await sendContactEmail(formData);
+    setState(res);
+    setIsPending(false);
+  };
   const [isLoaded, setIsLoaded] = useState(false)
   const [portfolioProjects, setPortfolioProjects] = useState<any[]>([])
 
@@ -349,10 +349,12 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 
             <div className="hidden md:block relative">
               <div
-                className="bg-slate-900/90 backdrop-blur-md border border-blue-900/30 px-12 py-4 relative"
+                className="bg-slate-900/90 backdrop-blur-md px-12 py-4 relative"
                 style={{
                   clipPath: "polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%)",
                   minWidth: "500px",
+                  border: "2px solid rgba(250, 204, 21, 0.35)",
+                  borderImage: "linear-gradient(90deg, rgba(250,204,21,0.25) 0%, rgba(253,230,138,0.18) 100%) 1",
                 }}
               >
                 <nav className="flex items-center justify-center space-x-8">
@@ -459,7 +461,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         */}
 
         {/* New image background logic - uncomment to test */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: 'url("/hero-banner.jpg")',
@@ -674,17 +676,17 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
                     </div>
                   </div>
                   <div className="h-36 rounded-lg mb-6 overflow-hidden relative">
-  {project.image && (
-    <img
-      src={project.image}
-      alt={project.title}
-      className="absolute inset-0 w-full h-full object-cover rounded-lg"
-      style={{ zIndex: 1 }}
-    />
-  )}
-  {/* Optional: Overlay for readability */}
-  <div className="absolute inset-0 bg-black/30 z-10" />
-</div>
+                    {project.image && (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                        style={{ zIndex: 1 }}
+                      />
+                    )}
+                    {/* Optional: Overlay for readability */}
+                    <div className="absolute inset-0 bg-black/30 z-10" />
+                  </div>
 
                   <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-yellow-400 transition-colors duration-300">
                     {project.title}
@@ -938,7 +940,7 @@ const handleContactSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
                   { icon: <Github className="w-5 h-5" />, href: "https://github.com/vyllion", label: "GitHub" },
                   { icon: <Youtube className="w-5 h-5" />, href: "https://youtube.com/@vyllion", label: "YouTube" },
                 ].map((social, index) => (
-                  <Link key={social.label} href={social.href} className="group relative" aria-label={social.label}  target="_blank">
+                  <Link key={social.label} href={social.href} className="group relative" aria-label={social.label} target="_blank">
                     <div className="w-12 h-12 bg-gradient-to-br from-slate-800/50 to-slate-700/50 rounded-xl flex items-center justify-center text-yellow-400 border border-slate-700/50 hover:border-yellow-400/50 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:shadow-lg hover:shadow-yellow-400/20">
                       {social.icon}
                     </div>
