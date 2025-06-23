@@ -15,9 +15,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://vyllion.com'),
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: true,
     follow: true,
