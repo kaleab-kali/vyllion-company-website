@@ -62,7 +62,7 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link to="/#cta">
+            <Link to="/" hash="cta">
               <Button size="sm" className="bg-[#C8B180] text-[#080C12] hover:bg-[#C8B180]/90 font-bold rounded-none px-8 py-5 tracking-wide uppercase text-[11px] border border-[#C8B180]">
                 Request a Demo
               </Button>
@@ -104,7 +104,7 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <Link to="/#cta" onClick={() => setMobileMenuOpen(false)}>
+            <Link to="/" hash="cta" onClick={() => setMobileMenuOpen(false)}>
               <Button size="sm" className="mt-4 w-full bg-[#C8B180] text-[#080C12] hover:bg-[#C8B180]/90 font-bold rounded-none uppercase tracking-widest py-6">
                 Request a Demo
               </Button>
