@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vyllion.novek.et/sitemap.xml
