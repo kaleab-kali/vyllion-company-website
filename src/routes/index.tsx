@@ -714,19 +714,8 @@ function CtaSection() {
     setStatus("submitting")
     setErrorMessage("")
 
-    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "612bb746-2297-448c-95f3-ed5e4be2bc75"
     const formspreeId = import.meta.env.VITE_FORMSPREE_ID
-
-    // If neither key is configured yet, trigger mailto fallback or guide user
-    if (!web3FormsKey && !formspreeId) {
-      const subject = encodeURIComponent(`Vyllion Demonstration Request - ${formData.firm} (${formData.name})`)
-      const body = encodeURIComponent(
-        `Full Name: ${formData.name}\nFirm Name: ${formData.firm}\nWork Email: ${formData.email}\nPhone: ${formData.phone}\nFirm Category: ${formData.type}\nNotes: ${formData.notes || "None"}`
-      )
-      window.location.href = `mailto:vyllion@novek.et?subject=${subject}&body=${body}`
-      setStatus("success")
-      return
-    }
 
     try {
       if (web3FormsKey) {

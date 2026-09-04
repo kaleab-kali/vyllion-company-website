@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vyllion.novek.et/</loc>
+    <loc>https://vyllion.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/platform</loc>
+    <loc>https://vyllion.com/platform</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/solutions</loc>
+    <loc>https://vyllion.com/solutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/capabilities</loc>
+    <loc>https://vyllion.com/capabilities</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/integrations</loc>
+    <loc>https://vyllion.com/integrations</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/security</loc>
+    <loc>https://vyllion.com/security</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/resources</loc>
+    <loc>https://vyllion.com/resources</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/gdpr</loc>
+    <loc>https://vyllion.com/gdpr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/terms</loc>
+    <loc>https://vyllion.com/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/privacy</loc>
+    <loc>https://vyllion.com/privacy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vyllion.novek.et/cookies</loc>
+    <loc>https://vyllion.com/cookies</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
