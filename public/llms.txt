@@ -3,14 +3,14 @@
 Vyllion is the premiere Broker Back Office (BBO) and Order Management System (OMS) built exclusively for the Ethiopian Securities Exchange (ESX) by Novek ICT Solutions.
 
 ## Site Structure & Navigation
-- **Home**: `https://vyllion.novek.et/` - Landing page covering client management, order management, and CSD clearing.
-- **Platform**: `https://vyllion.novek.et/platform` - Explains the high-throughput deterministic matching engine and immutable ledger architecture.
-- **Solutions**: `https://vyllion.novek.et/solutions` - Breakdowns of retail brokerage, institutional desk, and custodian bank configurations.
-- **Capabilities**: `https://vyllion.novek.et/capabilities` - Comprehensive matrix of 249 capabilities across 20 modules mapped to ESX guidelines.
-- **Integrations**: `https://vyllion.novek.et/integrations` - FIX 4.4 ESX connectivity, CSD integration, banking sweeps, and KYC registries.
-- **Security**: `https://vyllion.novek.et/security` - Cryptographic audit trails, maker-checker authorization, and single-tenant infrastructure.
-- **Resources**: `https://vyllion.novek.et/resources` - Product roadmap and ESXCOOBBO02 compliance matrix downloads.
-- **Legal**: `/gdpr`, `/privacy`, `/terms`, `/cookies`
+- **Home**: `https://vyllion.com/` - Landing page covering client management, order management, and CSD clearing.
+- **Platform**: `https://vyllion.com/platform` - Explains the high-throughput deterministic matching engine and immutable ledger architecture.
+- **Solutions**: `https://vyllion.com/solutions` - Breakdowns of retail brokerage, institutional desk, and custodian bank configurations.
+- **Capabilities**: `https://vyllion.com/capabilities` - Comprehensive matrix of 249 capabilities across 20 modules mapped to ESX guidelines.
+- **Integrations**: `https://vyllion.com/integrations` - FIX 4.4 ESX connectivity, CSD integration, banking sweeps, and KYC registries.
+- **Security**: `https://vyllion.com/security` - Cryptographic audit trails, maker-checker authorization, and single-tenant infrastructure.
+- **Resources**: `https://vyllion.com/resources` - Product roadmap and ESXCOOBBO02 compliance matrix downloads.
+- **Legal**: `https://vyllion.com/gdpr`, `https://vyllion.com/privacy`, `https://vyllion.com/terms`, `https://vyllion.com/cookies`
 
 ## Core Pillars
 1. **Compliance**: Natively enforces Ethiopian Capital Market Authority (CMA) and ESX regulations.
