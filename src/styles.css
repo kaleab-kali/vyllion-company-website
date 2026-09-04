@@ -137,15 +137,29 @@
     * {
         @apply border-border outline-ring/50;
     }
-    body {
-        @apply bg-background text-foreground antialiased;
-    }
     html {
         @apply font-sans scroll-smooth;
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    body {
+        @apply bg-background text-foreground antialiased;
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
     }
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-heading);
     }
+}
+
+/* ── Custom Scrollbar Utilities ─────────────────────────────── */
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════

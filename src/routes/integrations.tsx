@@ -5,9 +5,19 @@ export const Route = createFileRoute("/integrations")({
   component: IntegrationsPage,
   head: () => ({
     meta: [
-      { title: "Integrations & API — Vyllion" },
-      { name: "description", content: "Connect Vyllion to the ESX ATS, CSD, and local Ethiopian banking infrastructure." },
-      { property: "og:title", content: "Integrations & API — Vyllion" },
+      { title: "Integrations & API Gateway — Vyllion | ESX FIX 4.4 & CSD" },
+      { name: "description", content: "Connect your brokerage to the Ethiopian Securities Exchange via certified FIX 4.4, Central Securities Depository (ISO 20022), and Ethiopian commercial banking APIs." },
+      { property: "og:title", content: "Market Connectivity & Integrations — Vyllion" },
+      { property: "og:description", content: "Low-latency FIX 4.4 engine, Fayda eKYC, CSD ISO 20022 settlement rails, and commercial bank sweeps." },
+      { property: "og:url", content: "https://vyllion.com/integrations" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Integrations & API — Vyllion" },
+      { name: "twitter:description", content: "Native connectivity to ESX ATS, Fayda ID, and CSD clearing." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/integrations" },
     ],
   }),
 })

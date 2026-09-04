@@ -5,9 +5,19 @@ export const Route = createFileRoute("/solutions")({
   component: SolutionsPage,
   head: () => ({
     meta: [
-      { title: "Brokerage Solutions — Vyllion" },
-      { name: "description", content: "Vyllion solutions tailored for retail and institutional brokers operating on the ESX." },
-      { property: "og:title", content: "Brokerage Solutions — Vyllion" },
+      { title: "Brokerage Solutions — Vyllion | Retail, Institutional & Custodian" },
+      { name: "description", content: "Tailored brokerage solutions for Retail Brokerages, Institutional Trading Desks, and Custodian Banks operating on the Ethiopian Securities Exchange (ESX)." },
+      { property: "og:title", content: "Brokerage Solutions by Firm Type — Vyllion" },
+      { property: "og:description", content: "Purpose-built workflows for mass retail concurrency, block trading DMA, and custodian reconciliation on the ESX." },
+      { property: "og:url", content: "https://vyllion.com/solutions" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Brokerage Solutions — Vyllion" },
+      { name: "twitter:description", content: "Tailored solutions for retail brokers, institutional desks, and custodians on the ESX." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/solutions" },
     ],
   }),
 })

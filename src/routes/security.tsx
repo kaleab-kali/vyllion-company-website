@@ -5,9 +5,19 @@ export const Route = createFileRoute("/security")({
   component: SecurityPage,
   head: () => ({
     meta: [
-      { title: "Security & Compliance — Vyllion" },
-      { name: "description", content: "Vyllion's security model, cryptographic audit trails, and maker-checker workflows." },
-      { property: "og:title", content: "Security & Compliance — Vyllion" },
+      { title: "Security & Compliance — Vyllion | Cryptographic Audit Trails" },
+      { name: "description", content: "Explore Vyllion's financial-grade security architecture: hash-chained audit stores, cryptographic maker-checker approvals, and strict single-tenant database isolation." },
+      { property: "og:title", content: "Security & Compliance Architecture — Vyllion" },
+      { property: "og:description", content: "Mathematical certainty over every trade and ledger adjustment through tamper-evident cryptographic hash chains." },
+      { property: "og:url", content: "https://vyllion.com/security" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Security & Compliance — Vyllion" },
+      { name: "twitter:description", content: "Cryptographic audit stores, single-tenant isolation, and maker-checker workflows for capital markets." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/security" },
     ],
   }),
 })

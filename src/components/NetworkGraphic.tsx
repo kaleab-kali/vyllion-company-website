@@ -38,7 +38,7 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
 
   return (
     <div className={`relative ${className}`}>
-      <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <svg viewBox="-6 0 114 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
         {/* Edges */}
         {edges.map((edge, i) => {
           const s = nodes.find(n => n.id === edge.source)!
@@ -97,27 +97,32 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
         ))}
       </svg>
 
-      {/* Floating labels as seen in the mockup */}
-      <div className="absolute top-10 right-10 flex items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
+      {/* Floating labels - Desktop Layout */}
+      <div className="hidden sm:flex absolute top-8 right-6 items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
         <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Order Routing</span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
         <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Active</span>
       </div>
 
-      <div className="absolute bottom-12 left-10 flex items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Order Routing</span>
-        <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Active</span>
-      </div>
-
-      <div className="absolute bottom-10 right-16 flex items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
+      <div className="hidden sm:flex absolute bottom-8 left-6 items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
         <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Risk Engine</span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
         <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Monitoring</span>
       </div>
 
-      {/* Central Logo Overlay (using the component) */}
-      <div className="absolute top-1/2 left-[45%] -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-gold">
+      {/* Floating labels - Mobile Compact */}
+      <div className="sm:hidden absolute top-2 right-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 backdrop-blur-sm text-[8px] text-muted-foreground uppercase tracking-wider">
+        <span>Routing</span>
+        <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_6px_rgba(74,222,128,0.8)]" />
+      </div>
+
+      <div className="sm:hidden absolute bottom-2 left-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 backdrop-blur-sm text-[8px] text-muted-foreground uppercase tracking-wider">
+        <span>Risk Engine</span>
+        <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_6px_rgba(74,222,128,0.8)]" />
+      </div>
+
+      {/* Central Logo Overlay */}
+      <div className="absolute top-1/2 left-[45%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 text-gold pointer-events-none">
         <VyllionLogo />
       </div>
     </div>
