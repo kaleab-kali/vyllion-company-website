@@ -5,9 +5,19 @@ export const Route = createFileRoute("/platform")({
   component: PlatformPage,
   head: () => ({
     meta: [
-      { title: "Platform Architecture — Vyllion" },
-      { name: "description", content: "Explore the core platform architecture of Vyllion. A highly resilient, distributed broker operating system built for the Ethiopian capital market." },
+      { title: "Platform Architecture — Vyllion | Broker Operating System" },
+      { name: "description", content: "Explore the core platform architecture of Vyllion. A highly resilient, deterministic broker operating system built for the Ethiopian Securities Exchange." },
       { property: "og:title", content: "Platform Architecture — Vyllion" },
+      { property: "og:description", content: "Deterministic state machine, high-throughput matching logic, and immutable ledger built for ESX member firms." },
+      { property: "og:url", content: "https://vyllion.com/platform" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Platform Architecture — Vyllion" },
+      { name: "twitter:description", content: "Deterministic state engine and high-throughput order routing for ESX." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/platform" },
     ],
   }),
 })

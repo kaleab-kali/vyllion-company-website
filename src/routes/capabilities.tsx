@@ -5,9 +5,19 @@ export const Route = createFileRoute("/capabilities")({
   component: CapabilitiesPage,
   head: () => ({
     meta: [
-      { title: "Core Capabilities — Vyllion" },
-      { name: "description", content: "Explore Vyllion's exhaustive list of capabilities: from Client Onboarding to Settlement Finality." },
-      { property: "og:title", content: "Core Capabilities — Vyllion" },
+      { title: "Core Capabilities — Vyllion | 249 Brokerage Features" },
+      { name: "description", content: "Explore Vyllion's 249 discrete brokerage capabilities across 20 modules: from Client Onboarding and Pre-Trade Risk to DvP Settlement Finality on the ESX." },
+      { property: "og:title", content: "Core Capabilities Matrix — Vyllion" },
+      { property: "og:description", content: "249 discrete capabilities mapping directly to ESX BBO/OMS Vendor Eligibility Guidelines." },
+      { property: "og:url", content: "https://vyllion.com/capabilities" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Core Capabilities — Vyllion" },
+      { name: "twitter:description", content: "Complete coverage of ESX broker back office and order management specifications." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/capabilities" },
     ],
   }),
 })

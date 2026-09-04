@@ -4,33 +4,129 @@ export function CsdSettlementVisual({ className = "" }: { className?: string }) 
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div ref={containerRef} className={`relative w-full min-h-[440px] rounded-xl border border-[#2C384A]/60 bg-[#0F141E] p-6 shadow-2xl overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`relative w-full rounded-2xl border border-[#2C384A]/60 bg-[#0F141E] p-4 sm:p-6 shadow-2xl overflow-hidden ${className}`}>
       
-      {/* ── TOP HEADER ── */}
-      <div className="flex items-center justify-between border-b border-[#2C384A]/40 pb-4">
+      {/* ── TOP HEADER (Responsive) ── */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#2C384A]/40 pb-4">
         <div className="font-sans text-[11px] font-bold text-white tracking-widest uppercase">
           TRADE <span className="text-[#64748B] font-medium">#VX-10482</span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="flex gap-1.5 rounded-md bg-[#161B22] p-1 border border-[#2C384A]/40">
+        <div className="flex items-center gap-3">
+          <div className="flex gap-1 rounded-md bg-[#161B22] p-1 border border-[#2C384A]/40">
             <div className="px-2 py-0.5 text-[9px] font-mono text-[#64748B]">T+0</div>
-            <div className="px-2 py-0.5 text-[9px] font-mono font-bold text-white bg-[#2C384A] rounded">T+1</div>
+            <div className="px-2 py-0.5 text-[9px] font-mono font-bold text-white bg-[#2C384A] rounded shadow-sm">T+1</div>
             <div className="px-2 py-0.5 text-[9px] font-mono text-[#64748B]">T+2</div>
           </div>
           <div className="hidden sm:block">
-            <div className="text-[10px] font-sans text-white font-medium">Settlement Cycle Selector</div>
-            <div className="text-[8px] font-sans text-[#64748B] uppercase tracking-[0.1em]">Settlement workflow configured for the market</div>
+            <div className="text-[10px] font-sans text-white font-medium">Settlement Cycle</div>
+            <div className="text-[8px] font-sans text-[#64748B] uppercase tracking-[0.1em]">Configured for ESX Market</div>
           </div>
         </div>
 
-        <div className="font-sans text-xs font-semibold tracking-[0.2em] text-[#94A3B8]">
-          Vyllion
+        <div className="font-sans text-xs font-semibold tracking-[0.2em] text-[#C8B180]">
+          ECSD DvP
         </div>
       </div>
 
-      {/* ── CENTRAL DIAGRAM CANVAS ── */}
-      <div className="relative h-[320px] w-full mt-6">
+      {/* ═══════════════════════════════════════════════════════════
+          MOBILE ADAPTIVE VIEW (< md)
+          ═══════════════════════════════════════════════════════════ */}
+      <div className="md:hidden mt-4 space-y-4">
+        
+        {/* Central DvP Finality Meter */}
+        <div className="rounded-xl border border-surface-3/80 bg-surface-1/90 p-4 backdrop-blur-md">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">
+              Settlement Status
+            </span>
+            <span className="rounded-full border border-gain/40 bg-gain/10 px-2.5 py-0.5 text-[9px] font-mono font-bold text-gain">
+              FINALITY REACHED ✓
+            </span>
+          </div>
+
+          <div className="mt-3 flex items-center gap-4">
+            <div className="relative h-16 w-16 shrink-0 flex items-center justify-center">
+              <svg className="w-full h-full transform -rotate-90">
+                <circle cx="32" cy="32" r="26" fill="none" stroke="#161B22" strokeWidth="5" />
+                <circle
+                  cx="32"
+                  cy="32"
+                  r="26"
+                  fill="none"
+                  stroke="#C8B180"
+                  strokeWidth="5"
+                  strokeDasharray="163"
+                  strokeDashoffset="0"
+                  className="drop-shadow-[0_0_6px_#C8B180]"
+                />
+              </svg>
+              <span className="absolute font-mono text-[11px] font-bold text-white">100%</span>
+            </div>
+            <div>
+              <h4 className="text-xs font-semibold text-white">Delivery vs Payment (DvP)</h4>
+              <p className="text-[10px] text-muted-foreground mt-0.5 leading-relaxed">
+                Simultaneous atomic exchange of securities in ECSD against central bank cash settlement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Dual Rails (Securities + Cash) */}
+        <div className="space-y-2 font-mono text-[10px]">
+          {/* Securities Rail */}
+          <div className="rounded-lg border border-gold/30 bg-gold/5 p-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-gold animate-pulse" />
+              <div>
+                <span className="text-white font-semibold block">Securities Leg</span>
+                <span className="text-muted-foreground text-[9px]">ECSD Account #994012</span>
+              </div>
+            </div>
+            <div className="text-right">
+              <span className="text-gold font-bold">+2,500 Shares</span>
+              <span className="text-gain block text-[9px]">✓ Debited &amp; Credited</span>
+            </div>
+          </div>
+
+          {/* Cash Rail */}
+          <div className="rounded-lg border border-info-blue/30 bg-info-blue/5 p-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-info-blue animate-pulse" />
+              <div>
+                <span className="text-white font-semibold block">Cash Settlement Leg</span>
+                <span className="text-muted-foreground text-[9px]">Bank Settlement Sweep</span>
+              </div>
+            </div>
+            <div className="text-right">
+              <span className="text-info-blue font-bold">ETB 321,250.00</span>
+              <span className="text-gain block text-[9px]">✓ Finalized via RTGS</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Position Recon Snapshot */}
+        <div className="rounded-xl border border-surface-3 bg-surface-0/80 p-3.5 flex items-center justify-between">
+          <div>
+            <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest block">Client Position</span>
+            <div className="flex items-baseline gap-2 mt-0.5">
+              <span className="font-mono text-sm font-bold text-muted-foreground">2,500</span>
+              <span className="text-gold">→</span>
+              <span className="font-mono text-base font-bold text-white">5,000 ABC</span>
+            </div>
+          </div>
+          <div className="text-right">
+            <span className="text-[9px] font-mono text-gain uppercase tracking-widest block">ECSD Mirror</span>
+            <span className="text-[10px] font-mono text-white font-medium">Reconciled 100%</span>
+          </div>
+        </div>
+
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════
+          DESKTOP DIAGRAM VIEW (md+)
+          ═══════════════════════════════════════════════════════════ */}
+      <div className="hidden md:block relative h-[320px] w-full mt-6">
         
         {/* Background Ambient Glows */}
         <div className="absolute top-1/2 left-[30%] -translate-y-1/2 w-[250px] h-[250px] bg-[#C8B180]/[0.08] blur-[70px] rounded-full pointer-events-none" />

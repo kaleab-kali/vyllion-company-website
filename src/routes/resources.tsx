@@ -4,9 +4,19 @@ export const Route = createFileRoute("/resources")({
   component: ResourcesPage,
   head: () => ({
     meta: [
-      { title: "Resources & Compliance — Vyllion" },
-      { name: "description", content: "Download ESX compliance matrices and explore the Vyllion product roadmap." },
-      { property: "og:title", content: "Resources & Compliance — Vyllion" },
+      { title: "Resources & ESX Documentation — Vyllion" },
+      { name: "description", content: "Access official ESX compliance matrices, BBO-DEV architecture documentation, vendor eligibility guidelines, and regulatory guides for Ethiopian securities brokers." },
+      { property: "og:title", content: "Resources & Regulatory Documentation — Vyllion" },
+      { property: "og:description", content: "Compliance matrices, architecture whitepapers, and operational guides for Ethiopian securities brokers." },
+      { property: "og:url", content: "https://vyllion.com/resources" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Resources & Compliance — Vyllion" },
+      { name: "twitter:description", content: "Technical documentation and regulatory matrices for ESX member firms." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/resources" },
     ],
   }),
 })
