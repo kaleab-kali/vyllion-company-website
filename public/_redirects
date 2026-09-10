@@ -1,4 +1,0 @@
-# Redirect HTTP and WWW to canonical HTTPS apex domain
-http://vyllion.com/* https://vyllion.com/:splat 301!
-https://www.vyllion.com/* https://vyllion.com/:splat 301!
-http://www.vyllion.com/* https://vyllion.com/:splat 301!
