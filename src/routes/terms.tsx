@@ -2,6 +2,23 @@ import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/terms")({
   component: TermsPage,
+  head: () => ({
+    meta: [
+      { title: "Terms of Service — Vyllion | Capital Market Solutions" },
+      { name: "description", content: "Review the Terms of Service for Vyllion, the institutional Broker Back Office and Order Management System provided by Novek ICT Solutions PLC." },
+      { property: "og:title", content: "Terms of Service — Vyllion" },
+      { property: "og:description", content: "Licensing and usage terms for Vyllion Broker Back Office & OMS platform." },
+      { property: "og:url", content: "https://vyllion.com/terms" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Terms of Service — Vyllion" },
+      { name: "twitter:description", content: "Licensing and usage terms for Vyllion Broker Back Office & OMS platform." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/terms" },
+    ],
+  }),
 })
 
 function TermsPage() {

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Vyllion — Institutional Capital Markets Platform for Ethiopia" },
       { property: "og:description", content: "Sub-millisecond FIX 4.4 routing, automated CSD settlement allocation, risk controls, and client onboarding built for ESX member brokers." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vyllion.com/" },
+      { property: "og:url", content: "https://vyllion.com" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://vyllion.com/" },
+      { rel: "canonical", href: "https://vyllion.com" },
     ],
   }),
 })

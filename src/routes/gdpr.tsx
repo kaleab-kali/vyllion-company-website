@@ -2,6 +2,23 @@ import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/gdpr")({
   component: GDPRPage,
+  head: () => ({
+    meta: [
+      { title: "GDPR & Data Protection Policy — Vyllion | Capital Markets Compliance" },
+      { name: "description", content: "Learn about Vyllion's GDPR compliance, data protection standards, and client data processing commitments for Ethiopian Securities Exchange (ESX) member firms." },
+      { property: "og:title", content: "GDPR & Data Protection Policy — Vyllion" },
+      { property: "og:description", content: "Data processing commitments and regulatory data protection standards for ESX member brokerages." },
+      { property: "og:url", content: "https://vyllion.com/gdpr" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "GDPR & Data Protection Policy — Vyllion" },
+      { name: "twitter:description", content: "Data processing commitments and regulatory data protection standards for ESX brokers." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/gdpr" },
+    ],
+  }),
 })
 
 function GDPRPage() {

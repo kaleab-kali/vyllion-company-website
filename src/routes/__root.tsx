@@ -36,7 +36,6 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://vyllion.com" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -56,7 +55,7 @@ export const Route = createRootRoute({
               "url": "https://vyllion.com",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://vyllion.com/favicon.svg"
+                "url": "https://vyllion.com/og-image.png"
               },
               "description": "Vyllion is an institutional financial technology provider engineered exclusively for member firms of the Ethiopian Securities Exchange (ESX).",
               "address": {

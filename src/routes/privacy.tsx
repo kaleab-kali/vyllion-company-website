@@ -2,6 +2,23 @@ import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
+  head: () => ({
+    meta: [
+      { title: "Privacy Policy — Vyllion | Novek ICT Solutions" },
+      { name: "description", content: "Learn how Vyllion and Novek ICT Solutions PLC collect, use, and protect personal data across our capital markets platform." },
+      { property: "og:title", content: "Privacy Policy — Vyllion" },
+      { property: "og:description", content: "Privacy practices and data handling policies for Vyllion capital markets infrastructure." },
+      { property: "og:url", content: "https://vyllion.com/privacy" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Privacy Policy — Vyllion" },
+      { name: "twitter:description", content: "Privacy practices and data handling policies for Vyllion." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/privacy" },
+    ],
+  }),
 })
 
 function PrivacyPage() {

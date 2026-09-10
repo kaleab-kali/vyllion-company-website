@@ -2,6 +2,23 @@ import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/cookies")({
   component: CookiesPage,
+  head: () => ({
+    meta: [
+      { title: "Cookie Policy — Vyllion | Capital Market Infrastructure" },
+      { name: "description", content: "Understand how Vyllion uses essential and analytical cookies to ensure system security, operational performance, and compliance." },
+      { property: "og:title", content: "Cookie Policy — Vyllion" },
+      { property: "og:description", content: "Information regarding cookie usage and privacy safeguards on Vyllion." },
+      { property: "og:url", content: "https://vyllion.com/cookies" },
+      { property: "og:image", content: "https://vyllion.com/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Cookie Policy — Vyllion" },
+      { name: "twitter:description", content: "Information regarding cookie usage and privacy safeguards on Vyllion." },
+      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://vyllion.com/cookies" },
+    ],
+  }),
 })
 
 function CookiesPage() {
