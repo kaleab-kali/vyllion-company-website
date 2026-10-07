@@ -91,6 +91,8 @@ export const Route = createRootRoute({
               "@type": "Organization",
               "@id": "https://vyllion.com/#organization",
               name: "Vyllion Technologies PLC",
+              legalName: "Vyllion Technologies PLC",
+              foundingDate: "2025",
               url: "https://vyllion.com",
               logo: {
                 "@type": "ImageObject",
@@ -103,6 +105,32 @@ export const Route = createRootRoute({
                 addressLocality: "Addis Ababa",
                 addressCountry: "ET",
               },
+              founders: [
+                {
+                  "@type": "Person",
+                  name: "Kaleab Girma",
+                  jobTitle: "Chief Executive Officer (CEO)",
+                },
+                {
+                  "@type": "Person",
+                  name: "Ezana Tegener",
+                  jobTitle: "Chief Technology Officer (CTO)",
+                },
+                {
+                  "@type": "Person",
+                  name: "Selam Bruke",
+                  jobTitle: "Chief Financial Officer (CFO)",
+                },
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "contact@vyllion.com",
+                  contactType: "customer support",
+                  areaServed: ["ET", "Africa"],
+                  availableLanguage: ["English", "Amharic"],
+                },
+              ],
               sameAs: [
                 "https://x.com/VyllionHQ",
                 "https://linkedin.com/company/vyllion",

@@ -41,6 +41,80 @@ export const Route = createFileRoute("/about")({
       },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "AboutPage",
+              "@id": "https://vyllion.com/about#webpage",
+              url: "https://vyllion.com/about",
+              name: "About Vyllion Technologies — Building the Trust Layer for Ethiopia & Africa",
+              description:
+                "Founded in 2025 in Addis Ababa, Vyllion Technologies builds digital escrow infrastructure in active testing with commercial banks, led by CEO Kaleab Girma, CTO Ezana Tegener, and CFO Selam Bruke.",
+              isPartOf: {
+                "@type": "WebSite",
+                "@id": "https://vyllion.com/#website",
+                name: "Vyllion",
+                url: "https://vyllion.com",
+              },
+              mainEntity: {
+                "@type": "Organization",
+                "@id": "https://vyllion.com/#organization",
+                name: "Vyllion Technologies PLC",
+                foundingDate: "2025",
+                foundingLocation: {
+                  "@type": "Place",
+                  name: "Addis Ababa, Ethiopia",
+                },
+                founders: [
+                  {
+                    "@type": "Person",
+                    name: "Kaleab Girma",
+                    jobTitle: "Chief Executive Officer (CEO)",
+                    description:
+                      "Leads corporate vision, banking partner integrations, and regulatory alignment.",
+                  },
+                  {
+                    "@type": "Person",
+                    name: "Ezana Tegener",
+                    jobTitle: "Chief Technology Officer (CTO)",
+                    description:
+                      "Directs core software architecture, multi-sign escrow verification, and security.",
+                  },
+                  {
+                    "@type": "Person",
+                    name: "Selam Bruke",
+                    jobTitle: "Chief Financial Officer (CFO)",
+                    description:
+                      "Oversees financial operations, segregated custodial accounts, and partner bank reconciliations.",
+                  },
+                ],
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://vyllion.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "About Us",
+                  item: "https://vyllion.com/about",
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
 })
 

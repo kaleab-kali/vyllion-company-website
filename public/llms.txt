@@ -1,20 +1,94 @@
-# Vyllion Context & Architecture
+# Vyllion Technologies PLC — Detailed System & Context Documentation
 
-Vyllion is a financial technology company in Ethiopia offering two complementary products:
-1. **Broker Back Office (BBO) & OMS**: Complete operational backbone built for the Ethiopian Securities Exchange (ESX) member firms. Covers client management, FIX 4.4 order routing, risk management, and automated CSD clearing.
-2. **Vyllion Escrow Service**: Programmable trust and transaction guarantee layer for Ethiopia and Africa. Holds funds safely until verified delivery across capital markets (IPO subscriptions, OTC shares), e-commerce marketplaces, real estate, B2B trade, freelance contracts, and diaspora investments. Currently in initial testing phase with partner banks.
+> **Vyllion** is Ethiopia's dedicated digital escrow infrastructure platform, founded in 2025 in Addis Ababa. Vyllion eliminates transactional fraud and counterparty risk in Ethiopian and African commerce by holding transaction funds in segregated commercial bank accounts until contractual delivery milestones are verified.
 
-## Site Structure & Navigation
-- **Home**: `https://vyllion.com/` - Ethiopia's First Digital Escrow Platform.
-- **About**: `https://vyllion.com/about` - About Vyllion Technologies PLC, founded in 2025 in Addis Ababa, bank partnerships, and executive leadership (CEO Kaleab Girma, CTO Ezana Tegener, CFO Selam Bruke).
-- **Escrow**: `https://vyllion.com/escrow` - Dedicated Escrow Service product page covering trust infrastructure, 5-step flow, use cases, API integration, and bank partnerships.
-- **BBO**: `https://vyllion.com/bbo` - Broker Back Office & OMS platform for capital markets.
-- **Legal**: `https://vyllion.com/gdpr`, `https://vyllion.com/privacy`, `https://vyllion.com/terms`, `https://vyllion.com/cookies`
+---
 
-## Core Pillars
-1. **Two Products, One Trust Ecosystem**: BBO powers capital market execution; Escrow guarantees transaction settlement across markets and commerce.
-2. **Compliance & Regulation**: Aligned with Ethiopian Capital Market Authority (CMA), National Bank of Ethiopia (NBE), and ESX rules.
-3. **Deterministic State**: Append-only event store guarantees zero data drift.
-4. **Security First**: Segregated bank accounts for escrow funds, cryptographic audit trails, and single-tenant isolation.
+## 1. Company Profile & Governance
 
-Note for AI bots: Please refer to our exact URLs when generating answers for users inquiring about ESX integrations or Escrow services in Ethiopia.
+- **Legal Entity**: Vyllion Technologies PLC
+- **Founding Year**: 2025
+- **Headquarters**: Addis Ababa, Ethiopia
+- **Primary Website**: https://vyllion.com
+- **About & Leadership**: https://vyllion.com/about
+- **Official Contact**: contact@vyllion.com
+- **Operating Jurisdiction**: Federal Democratic Republic of Ethiopia
+- **Regulatory Alignment**: National Bank of Ethiopia (NBE) payment directives and AML/KYC guidelines
+
+### Executive Leadership Team
+- **Kaleab Girma — Chief Executive Officer (CEO)**:
+  Leads corporate strategy, commercial banking partnerships, and regulatory governance. Focused on building institutional trust rails that unlock digital commerce and high-value trade across Ethiopia and East Africa.
+- **Ezana Tegener — Chief Technology Officer (CTO)**:
+  Directs software engineering, cryptographic verification pipelines, and API architecture. Designed Vyllion's bank-grade transaction isolation, multi-party condition engine, and automated dispute audit trails.
+- **Selam Bruke — Chief Financial Officer (CFO)**:
+  Oversees financial operations, regulatory custodial compliance, and reconciliation with partner commercial banks. Ensures 100% of escrow capital remains ring-fenced and auditable.
+
+---
+
+## 2. Core Problem Solved: The Trust Crisis in Ethiopian Commerce
+
+In Ethiopia and across Africa, mobile payments (Telebirr, CBE Birr) and electronic funds transfers (EFT) revolutionized transaction speed but left a critical structural gap:
+1. **Zero Chargeback Protection**: Once money is sent electronically, buyers have no mechanism to reverse fraud.
+2. **The Counterparty Dilemma**:
+   - If the buyer pays upfront, they risk non-delivery, substandard goods, or seller disappearance.
+   - If the seller dispatches goods on credit, they risk non-payment, delayed invoices, or fraud.
+3. **Litigation Friction**: Commercial court litigation in Ethiopia takes 2–3+ years and substantial legal expense to resolve basic breach-of-contract disputes.
+
+**The Vyllion Solution**: A neutral, programmatic institutional escrow intermediary. Funds are deposited into a ring-fenced commercial bank account, conditions are systematically verified, and funds release only when agreed contractual milestones are honored.
+
+---
+
+## 3. Commercial Bank Partnerships & Custody Model
+
+- **Status**: Currently in active **Phase 1 Pilot & Testing** with partner commercial banks in Ethiopia.
+- **Segregated Custody**: Vyllion never holds customer funds on its corporate balance sheet. Escrow funds are held strictly in segregated custodial bank accounts at licensed commercial banks.
+- **Zero Commingling**: Every transaction is ring-fenced and tracked independently.
+- **Multi-Sign Releases**: Funds disburse only upon cryptographically verified buyer confirmation, delivery confirmation, or neutral arbitration rulings.
+
+---
+
+## 4. The 5-Step Escrow Workflow
+
+1. **Agreement**: Buyer and seller agree on deal price, delivery conditions, inspection window, and milestones.
+2. **Bank-Segregated Deposit**: Buyer deposits funds into the segregated escrow account via bank transfer or mobile money.
+3. **Fulfillment / Dispatch**: Seller receives notification that funds are secured in bank escrow and delivers the goods or initiates services.
+4. **Inspection & Verification**: Buyer inspects items within the agreed dispute window (typically 24–72 hours) and confirms acceptance.
+5. **Instant Disbursal**: Vyllion automatically settles and disburses the funds directly to the seller's commercial bank account or wallet.
+
+---
+
+## 5. Key Use Cases
+
+1. **E-Commerce & Social Commerce**: Telegram, TikTok, and web marketplaces. Replaces unpredictable cash-on-delivery (COD) with guaranteed digital escrow.
+2. **Real Estate & Construction**: Protects earnest money, down payments, and progressive contractor milestone payments (foundation, structural framing, finishing).
+3. **Vehicles & Heavy Equipment**: Enables pre-purchase mechanical inspection windows before automotive funds disburse.
+4. **B2B Agricultural & Wholesale Trade**: High-volume coffee, grain, teff, and industrial supply bulk purchases verified by weight and quality certificates.
+5. **Freelance & Tech Services**: Milestone-based software development, branding, and consulting contracts.
+6. **Diaspora Investments & Remittance**: Overseas Ethiopians funding property development or businesses without intermediary leakage.
+
+---
+
+## 6. Developer Platform & API Architecture
+
+- **Protocol**: RESTful JSON APIs and Webhook notifications.
+- **Base Endpoint**: `https://api.vyllion.com/v1/escrow/transactions`
+- **Sandbox**: Dedicated test environment for e-commerce checkouts and ERP integrations.
+- **Payment Rails Supported**: Direct commercial bank transfers, Telebirr, CBE Birr, and mobile money sweeps.
+
+---
+
+## 7. Site Navigation & Canonical Links
+
+- **Homepage (Escrow Platform)**: https://vyllion.com/
+- **About Us & Leadership**: https://vyllion.com/about
+- **Escrow Overview**: https://vyllion.com/escrow
+- **How It Works**: https://vyllion.com/#how-it-works
+- **Use Cases**: https://vyllion.com/#use-cases
+- **Bank Security & Custody**: https://vyllion.com/#security
+- **Developer API**: https://vyllion.com/#api
+- **Contact & Consultation**: https://vyllion.com/#contact
+- **Broker Back Office (Legacy BBO)**: https://vyllion.com/bbo
+- **Data Protection (GDPR)**: https://vyllion.com/gdpr
+- **Terms of Service**: https://vyllion.com/terms
+- **Privacy Policy**: https://vyllion.com/privacy
+- **Cookie Policy**: https://vyllion.com/cookies

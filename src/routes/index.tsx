@@ -45,6 +45,139 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Service",
+              "@id": "https://vyllion.com/#service",
+              name: "Vyllion Digital Escrow Platform",
+              serviceType: "Digital Escrow",
+              provider: {
+                "@type": "Organization",
+                name: "Vyllion Technologies PLC",
+                url: "https://vyllion.com",
+              },
+              areaServed: [
+                { "@type": "Country", name: "Ethiopia" },
+                { "@type": "Continent", name: "Africa" },
+              ],
+              description:
+                "Institutional digital escrow infrastructure securing transactions in Ethiopia through partner commercial bank segregated custody and programmable milestone payouts.",
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Escrow Protection Solutions",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "E-Commerce & Marketplace Escrow",
+                      description:
+                        "Eliminates delivery scams on Telegram, TikTok, and online shops.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Real Estate & Construction Escrow",
+                      description:
+                        "Protects property deposits and progressive construction milestones.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Vehicle & Machinery Escrow",
+                      description:
+                        "Automotive purchases with mechanical inspection windows.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "B2B Agriculture & Wholesale Escrow",
+                      description:
+                        "Secures bulk coffee, grain, and industrial supply trade.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Freelance & Service Contract Escrow",
+                      description:
+                        "Milestone-based payouts for software engineering and creative contracts.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Diaspora Remittance & Investment Escrow",
+                      description:
+                        "Enables Ethiopians abroad to fund verified family projects safely.",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://vyllion.com/#faq",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is Vyllion Escrow?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Vyllion is Ethiopia's digital escrow platform founded in 2025 in Addis Ababa. It eliminates fraud by holding buyer funds in segregated commercial bank accounts until contractual delivery milestones are verified.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Where are escrow funds held?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "All escrow funds are held in segregated custodial accounts with licensed partner commercial banks in Ethiopia. Vyllion never co-mingles client funds with operating capital.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Who founded Vyllion and who leads the team?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Vyllion Technologies PLC was founded in 2025 in Addis Ababa. The executive leadership team includes CEO Kaleab Girma, CTO Ezana Tegener, and CFO Selam Bruke.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What is Vyllion's current operational status?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Vyllion is currently in active Phase 1 testing and operational integration with partner commercial banks in Ethiopia.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How does the milestone release process work?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Both parties agree on terms and inspection conditions. The buyer deposits funds into bank escrow. The seller delivers goods or completes a milestone. The buyer inspects and approves within the inspection window, triggering instant payment release to the seller.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
 })
 
