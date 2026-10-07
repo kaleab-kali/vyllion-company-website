@@ -38,11 +38,15 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
 
   return (
     <div className={`relative ${className}`}>
-      <svg viewBox="-6 0 114 100" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <svg
+        viewBox="-6 0 114 100"
+        className="h-full w-full"
+        preserveAspectRatio="xMidYMid meet"
+      >
         {/* Edges */}
         {edges.map((edge, i) => {
-          const s = nodes.find(n => n.id === edge.source)!
-          const t = nodes.find(n => n.id === edge.target)!
+          const s = nodes.find((n) => n.id === edge.source)!
+          const t = nodes.find((n) => n.id === edge.target)!
           return (
             <line
               key={`edge-${i}`}
@@ -59,9 +63,24 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
         })}
 
         {/* Central glowing ring and logo */}
-        <circle cx="45" cy="50" r="15" fill="none" stroke="#232c45" strokeWidth="0.5" />
-        <circle cx="45" cy="50" r="12" fill="none" stroke="#3B82F6" strokeWidth="0.2" strokeOpacity="0.5" />
-        
+        <circle
+          cx="45"
+          cy="50"
+          r="15"
+          fill="none"
+          stroke="#232c45"
+          strokeWidth="0.5"
+        />
+        <circle
+          cx="45"
+          cy="50"
+          r="12"
+          fill="none"
+          stroke="#3B82F6"
+          strokeWidth="0.2"
+          strokeOpacity="0.5"
+        />
+
         {/* Nodes */}
         {nodes.map((node) => (
           <g key={node.id} className="transition-transform hover:scale-110">
@@ -70,14 +89,22 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
               cx={node.x}
               cy={node.y}
               r="1"
-              fill={node.id === "market" || node.id === "csd" ? "#3B82F6" : "#E2C889"}
+              fill={
+                node.id === "market" || node.id === "csd"
+                  ? "#3B82F6"
+                  : "#E2C889"
+              }
             />
             <circle
               cx={node.x}
               cy={node.y}
               r="2"
               fill="none"
-              stroke={node.id === "market" || node.id === "csd" ? "#3B82F6" : "#E2C889"}
+              stroke={
+                node.id === "market" || node.id === "csd"
+                  ? "#3B82F6"
+                  : "#E2C889"
+              }
               strokeOpacity="0.3"
               strokeWidth="0.5"
             />
@@ -88,7 +115,7 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
               fontSize="2.5"
               fill="#A9B7C6"
               textAnchor={node.x > 50 ? "start" : "end"}
-              className="font-sans font-medium uppercase tracking-widest"
+              className="font-sans font-medium tracking-widest uppercase"
               style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.8))" }}
             >
               {node.label}
@@ -98,31 +125,39 @@ export function NetworkGraphic({ className = "" }: { className?: string }) {
       </svg>
 
       {/* Floating labels - Desktop Layout */}
-      <div className="hidden sm:flex absolute top-8 right-6 items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Order Routing</span>
+      <div className="absolute top-8 right-6 hidden items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm sm:flex">
+        <span className="text-[9px] tracking-widest text-muted-foreground uppercase">
+          Order Routing
+        </span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Active</span>
+        <span className="text-[9px] tracking-widest text-muted-foreground uppercase">
+          Active
+        </span>
       </div>
 
-      <div className="hidden sm:flex absolute bottom-8 left-6 items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm">
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Risk Engine</span>
+      <div className="absolute bottom-8 left-6 hidden items-center gap-2 rounded-full border border-surface-3 bg-surface-1/80 px-3 py-1 backdrop-blur-sm sm:flex">
+        <span className="text-[9px] tracking-widest text-muted-foreground uppercase">
+          Risk Engine
+        </span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-        <span className="text-[9px] text-muted-foreground uppercase tracking-widest">Monitoring</span>
+        <span className="text-[9px] tracking-widest text-muted-foreground uppercase">
+          Monitoring
+        </span>
       </div>
 
       {/* Floating labels - Mobile Compact */}
-      <div className="sm:hidden absolute top-2 right-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 backdrop-blur-sm text-[8px] text-muted-foreground uppercase tracking-wider">
+      <div className="absolute top-2 right-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 text-[8px] tracking-wider text-muted-foreground uppercase backdrop-blur-sm sm:hidden">
         <span>Routing</span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_6px_rgba(74,222,128,0.8)]" />
       </div>
 
-      <div className="sm:hidden absolute bottom-2 left-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 backdrop-blur-sm text-[8px] text-muted-foreground uppercase tracking-wider">
+      <div className="absolute bottom-2 left-2 flex items-center gap-1.5 rounded-full border border-surface-3 bg-surface-1/90 px-2 py-0.5 text-[8px] tracking-wider text-muted-foreground uppercase backdrop-blur-sm sm:hidden">
         <span>Risk Engine</span>
         <span className="h-1 w-1 rounded-full bg-gain shadow-[0_0_6px_rgba(74,222,128,0.8)]" />
       </div>
 
       {/* Central Logo Overlay */}
-      <div className="absolute top-1/2 left-[45%] -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 text-gold pointer-events-none">
+      <div className="pointer-events-none absolute top-1/2 left-[45%] h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-gold sm:h-12 sm:w-12">
         <VyllionLogo />
       </div>
     </div>

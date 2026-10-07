@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as EscrowRouteImport } from './routes/escrow'
 import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as IntegrationsRouteImport } from './routes/integrations'
 import { Route as PlatformRouteImport } from './routes/platform'
@@ -34,6 +35,11 @@ const CapabilitiesRoute = CapabilitiesRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EscrowRoute = EscrowRouteImport.update({
+  id: '/escrow',
+  path: '/escrow',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GdprRoute = GdprRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
+  '/escrow': typeof EscrowRoute
   '/gdpr': typeof GdprRoute
   '/integrations': typeof IntegrationsRoute
   '/platform': typeof PlatformRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
+  '/escrow': typeof EscrowRoute
   '/gdpr': typeof GdprRoute
   '/integrations': typeof IntegrationsRoute
   '/platform': typeof PlatformRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
+  '/escrow': typeof EscrowRoute
   '/gdpr': typeof GdprRoute
   '/integrations': typeof IntegrationsRoute
   '/platform': typeof PlatformRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/capabilities'
     | '/cookies'
+    | '/escrow'
     | '/gdpr'
     | '/integrations'
     | '/platform'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/capabilities'
     | '/cookies'
+    | '/escrow'
     | '/gdpr'
     | '/integrations'
     | '/platform'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/capabilities'
     | '/cookies'
+    | '/escrow'
     | '/gdpr'
     | '/integrations'
     | '/platform'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CapabilitiesRoute: typeof CapabilitiesRoute
   CookiesRoute: typeof CookiesRoute
+  EscrowRoute: typeof EscrowRoute
   GdprRoute: typeof GdprRoute
   IntegrationsRoute: typeof IntegrationsRoute
   PlatformRoute: typeof PlatformRoute
@@ -194,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/escrow': {
+      id: '/escrow'
+      path: '/escrow'
+      fullPath: '/escrow'
+      preLoaderRoute: typeof EscrowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gdpr': {
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CapabilitiesRoute: CapabilitiesRoute,
   CookiesRoute: CookiesRoute,
+  EscrowRoute: EscrowRoute,
   GdprRoute: GdprRoute,
   IntegrationsRoute: IntegrationsRoute,
   PlatformRoute: PlatformRoute,

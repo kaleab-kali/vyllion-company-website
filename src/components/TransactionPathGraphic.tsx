@@ -9,15 +9,68 @@ interface Node {
   code: string
 }
 
-export function TransactionPathGraphic({ className = "" }: { className?: string }) {
+export function TransactionPathGraphic({
+  className = "",
+}: {
+  className?: string
+}) {
   const nodes: Node[] = [
-    { id: "client", label: "CLIENT", x: 100, state: "CONNECTED", desc: "Onboarding, profiles, KYC information, accounts", code: "MOD-A" },
-    { id: "order", label: "ORDER", x: 233, state: "REAL-TIME", desc: "Capture, validate, manage orders, trade matching.", code: "MOD-B" },
-    { id: "execution", label: "EXECUTION", x: 366, state: "SYNCHRONIZED", desc: "Connect trading activity, multiple trading systems.", code: "MOD-D" },
-    { id: "settlement", label: "SETTLEMENT", x: 500, state: "SYNCHRONIZED", desc: "Positions, transfers, message exchange, CSD", code: "MOD-G" },
-    { id: "accounting", label: "ACCOUNTING", x: 633, state: "CONNECTED", desc: "Client ledgers, funds, reconciliation, bank-pool", code: "MOD-E" },
-    { id: "risk", label: "RISK & COMPLIANCE", x: 766, state: "MONITORED", desc: "KYC, validation, suspicious activity alerts", code: "MOD-C" },
-    { id: "reporting", label: "REPORTING", x: 900, state: "TRACEABLE", desc: "Liquidity, financial status, complaints, analysis", code: "MOD-N" },
+    {
+      id: "client",
+      label: "CLIENT",
+      x: 100,
+      state: "CONNECTED",
+      desc: "Onboarding, profiles, KYC information, accounts",
+      code: "MOD-A",
+    },
+    {
+      id: "order",
+      label: "ORDER",
+      x: 233,
+      state: "REAL-TIME",
+      desc: "Capture, validate, manage orders, trade matching.",
+      code: "MOD-B",
+    },
+    {
+      id: "execution",
+      label: "EXECUTION",
+      x: 366,
+      state: "SYNCHRONIZED",
+      desc: "Connect trading activity, multiple trading systems.",
+      code: "MOD-D",
+    },
+    {
+      id: "settlement",
+      label: "SETTLEMENT",
+      x: 500,
+      state: "SYNCHRONIZED",
+      desc: "Positions, transfers, message exchange, CSD",
+      code: "MOD-G",
+    },
+    {
+      id: "accounting",
+      label: "ACCOUNTING",
+      x: 633,
+      state: "CONNECTED",
+      desc: "Client ledgers, funds, reconciliation, bank-pool",
+      code: "MOD-E",
+    },
+    {
+      id: "risk",
+      label: "RISK & COMPLIANCE",
+      x: 766,
+      state: "MONITORED",
+      desc: "KYC, validation, suspicious activity alerts",
+      code: "MOD-C",
+    },
+    {
+      id: "reporting",
+      label: "REPORTING",
+      x: 900,
+      state: "TRACEABLE",
+      desc: "Liquidity, financial status, complaints, analysis",
+      code: "MOD-N",
+    },
   ]
 
   const [progress, setProgress] = useState(0)
@@ -55,32 +108,36 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
     // Second trailing packet pulse offset by 50%
     const d2 = Math.abs(((progress + 500) % 1000) - nodeX)
     const dist = Math.min(d1, d2)
-    
+
     if (dist < 75) {
       return Math.pow(1 - dist / 75, 2)
     }
     return 0
   }
 
-  // Find nearest active node if any is currently receiving the pulse
-  const activePulseNodeIndex = hoveredNode !== null 
-    ? hoveredNode 
-    : nodes.findIndex((_, idx) => getNodeIntensity(idx) > 0.6)
-
   return (
     <div className={`w-full ${className}`}>
       {/* Desktop Graphic */}
-      <div className="hidden md:block relative w-full">
-        <div className="relative w-full rounded-2xl border border-surface-3/60 bg-surface-1/40 p-6 backdrop-blur-md shadow-2xl shadow-black/50 overflow-hidden">
-          
+      <div className="relative hidden w-full md:block">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-surface-3/60 bg-surface-1/40 p-6 shadow-2xl shadow-black/50 backdrop-blur-md">
           {/* Subtle Ambient Background Grid & Radial Glow */}
-          <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-gold/5 blur-[100px] pointer-events-none" />
+          <div className="bg-grid pointer-events-none absolute inset-0 opacity-20" />
+          <div className="pointer-events-none absolute top-1/2 left-1/2 h-[200px] w-[800px] -translate-x-1/2 -translate-y-1/2 bg-gold/5 blur-[100px]" />
 
-          <svg viewBox="0 0 1000 240" className="w-full h-auto overflow-visible" preserveAspectRatio="xMidYMid meet">
+          <svg
+            viewBox="0 0 1000 240"
+            className="h-auto w-full overflow-visible"
+            preserveAspectRatio="xMidYMid meet"
+          >
             <defs>
               {/* Premium Glow Filters */}
-              <filter id="glow-gold-intense" x="-50%" y="-50%" width="200%" height="200%">
+              <filter
+                id="glow-gold-intense"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
                 <feGaussianBlur stdDeviation="6" result="blur1" />
                 <feGaussianBlur stdDeviation="2" result="blur2" />
                 <feMerge>
@@ -89,7 +146,13 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
-              <filter id="glow-blue-soft" x="-50%" y="-50%" width="200%" height="200%">
+              <filter
+                id="glow-blue-soft"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
                 <feGaussianBlur stdDeviation="4" result="blur" />
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
               </filter>
@@ -106,12 +169,20 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
             <g stroke="#232C45" strokeWidth="1.5" fill="none" opacity="0.8">
               {/* Top architectural highway */}
               <path d="M 0,90 L 80,90 L 120,50 L 260,50 L 300,90 L 330,90 L 370,50 L 720,50 L 780,90 L 1000,90" />
-              <path d="M 120,50 L 200,50 L 240,20 L 700,20 L 740,50" strokeDasharray="4 4" opacity="0.5" />
-              
+              <path
+                d="M 120,50 L 200,50 L 240,20 L 700,20 L 740,50"
+                strokeDasharray="4 4"
+                opacity="0.5"
+              />
+
               {/* Bottom architectural highway */}
               <path d="M 0,150 L 90,150 L 130,190 L 250,190 L 290,150 L 320,150 L 360,190 L 410,190 L 450,150 L 520,150 L 560,190 L 750,190 L 790,150 L 1000,150" />
-              <path d="M 410,190 L 450,220 L 720,220 L 760,190" strokeDasharray="6 6" opacity="0.4" />
-              
+              <path
+                d="M 410,190 L 450,220 L 720,220 L 760,190"
+                strokeDasharray="6 6"
+                opacity="0.4"
+              />
+
               {/* Connecting Diagonals */}
               <path d="M 150,120 L 175,90" strokeOpacity="0.5" />
               <path d="M 330,120 L 355,150" strokeOpacity="0.5" />
@@ -120,25 +191,40 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
             </g>
 
             {/* BASE TRANSACTION ARTERY */}
-            <line x1="0" y1="120" x2="1000" y2="120" stroke="#1C2438" strokeWidth="3" />
-            <line x1="0" y1="120" x2="1000" y2="120" stroke="#E2C889" strokeWidth="1.5" strokeOpacity="0.4" />
+            <line
+              x1="0"
+              y1="120"
+              x2="1000"
+              y2="120"
+              stroke="#1C2438"
+              strokeWidth="3"
+            />
+            <line
+              x1="0"
+              y1="120"
+              x2="1000"
+              y2="120"
+              stroke="#E2C889"
+              strokeWidth="1.5"
+              strokeOpacity="0.4"
+            />
 
             {/* SUB-PULSE CIRCUITS (Animated SVG dashoffset) */}
-            <path 
-              d="M 0,90 L 80,90 L 120,50 L 260,50 L 300,90 L 330,90 L 370,50 L 720,50 L 780,90 L 1000,90" 
-              stroke="#3B82F6" 
-              strokeWidth="1.5" 
-              fill="none" 
-              strokeDasharray="20 180" 
+            <path
+              d="M 0,90 L 80,90 L 120,50 L 260,50 L 300,90 L 330,90 L 370,50 L 720,50 L 780,90 L 1000,90"
+              stroke="#3B82F6"
+              strokeWidth="1.5"
+              fill="none"
+              strokeDasharray="20 180"
               strokeDashoffset={-progress * 1.5}
               opacity="0.7"
             />
-            <path 
-              d="M 0,150 L 90,150 L 130,190 L 250,190 L 290,150 L 320,150 L 360,190 L 410,190 L 450,150 L 520,150 L 560,190 L 750,190 L 790,150 L 1000,150" 
-              stroke="#E2C889" 
-              strokeWidth="1.5" 
-              fill="none" 
-              strokeDasharray="30 220" 
+            <path
+              d="M 0,150 L 90,150 L 130,190 L 250,190 L 290,150 L 320,150 L 360,190 L 410,190 L 450,150 L 520,150 L 560,190 L 750,190 L 790,150 L 1000,150"
+              stroke="#E2C889"
+              strokeWidth="1.5"
+              fill="none"
+              strokeDasharray="30 220"
               strokeDashoffset={-progress * 1.2}
               opacity="0.6"
             />
@@ -146,14 +232,43 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
             {/* PRIMARY DATA COMETS (Flowing along main gold artery) */}
             {/* Packet 1 */}
             <g transform={`translate(${progress}, 120)`}>
-              <line x1="-50" y1="0" x2="0" y2="0" stroke="url(#comet-tail)" strokeWidth="3" strokeLinecap="round" />
-              <circle cx="0" cy="0" r="4" fill="#FFF" filter="url(#glow-gold-intense)" />
+              <line
+                x1="-50"
+                y1="0"
+                x2="0"
+                y2="0"
+                stroke="url(#comet-tail)"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+              <circle
+                cx="0"
+                cy="0"
+                r="4"
+                fill="#FFF"
+                filter="url(#glow-gold-intense)"
+              />
               <circle cx="0" cy="0" r="2" fill="#E2C889" />
             </g>
             {/* Packet 2 (Trailing 50% offset) */}
             <g transform={`translate(${(progress + 500) % 1000}, 120)`}>
-              <line x1="-40" y1="0" x2="0" y2="0" stroke="url(#comet-tail)" strokeWidth="2.5" strokeLinecap="round" opacity="0.8" />
-              <circle cx="0" cy="0" r="3.5" fill="#FFF" filter="url(#glow-gold-intense)" />
+              <line
+                x1="-40"
+                y1="0"
+                x2="0"
+                y2="0"
+                stroke="url(#comet-tail)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                opacity="0.8"
+              />
+              <circle
+                cx="0"
+                cy="0"
+                r="3.5"
+                fill="#FFF"
+                filter="url(#glow-gold-intense)"
+              />
             </g>
 
             {/* NODES */}
@@ -163,8 +278,8 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
               const isActive = intensity > 0.4 || isHovered
 
               return (
-                <g 
-                  key={node.id} 
+                <g
+                  key={node.id}
                   className="cursor-pointer"
                   onMouseEnter={() => setHoveredNode(i)}
                   onMouseLeave={() => setHoveredNode(null)}
@@ -192,7 +307,11 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
                     stroke={isActive ? "#E2C889" : "#3B82F6"}
                     strokeWidth={isActive ? "2" : "1"}
                     strokeOpacity={isActive ? "1" : "0.4"}
-                    filter={isActive ? "url(#glow-gold-intense)" : "url(#glow-blue-soft)"}
+                    filter={
+                      isActive
+                        ? "url(#glow-gold-intense)"
+                        : "url(#glow-blue-soft)"
+                    }
                     className="transition-all duration-300"
                   />
 
@@ -237,7 +356,7 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
           </svg>
 
           {/* SYSTEM STATE LAYER (Interactive 7-Column Grid) */}
-          <div className="grid grid-cols-7 gap-3 mt-6 pt-6 border-t border-surface-3/50">
+          <div className="mt-6 grid grid-cols-7 gap-3 border-t border-surface-3/50 pt-6">
             {nodes.map((node, i) => {
               const intensity = getNodeIntensity(i)
               const isActive = intensity > 0.4 || hoveredNode === i
@@ -247,51 +366,60 @@ export function TransactionPathGraphic({ className = "" }: { className?: string 
                   key={`${node.id}-state`}
                   onMouseEnter={() => setHoveredNode(i)}
                   onMouseLeave={() => setHoveredNode(null)}
-                  className={`flex flex-col items-center text-center p-2.5 rounded-xl transition-all duration-300 cursor-pointer ${
-                    isActive 
-                      ? "bg-surface-2/80 border border-gold/30 shadow-lg shadow-gold/5 scale-[1.03]" 
-                      : "hover:bg-surface-2/40 border border-transparent"
+                  className={`flex cursor-pointer flex-col items-center rounded-xl p-2.5 text-center transition-all duration-300 ${
+                    isActive
+                      ? "scale-[1.03] border border-gold/30 bg-surface-2/80 shadow-lg shadow-gold/5"
+                      : "border border-transparent hover:bg-surface-2/40"
                   }`}
                 >
-                  <span className={`text-[10px] uppercase tracking-widest mb-1.5 font-mono font-semibold transition-colors duration-300 ${
-                    isActive ? "text-gold" : "text-muted-foreground/70"
-                  }`}>
+                  <span
+                    className={`mb-1.5 font-mono text-[10px] font-semibold tracking-widest uppercase transition-colors duration-300 ${
+                      isActive ? "text-gold" : "text-muted-foreground/70"
+                    }`}
+                  >
                     {node.state}
                   </span>
-                  <p className={`text-[11px] leading-relaxed transition-colors duration-300 ${
-                    isActive ? "text-foreground font-medium" : "text-muted-foreground/80"
-                  }`}>
+                  <p
+                    className={`text-[11px] leading-relaxed transition-colors duration-300 ${
+                      isActive
+                        ? "font-medium text-foreground"
+                        : "text-muted-foreground/80"
+                    }`}
+                  >
                     {node.desc}
                   </p>
                 </div>
               )
             })}
           </div>
-
         </div>
       </div>
 
       {/* Mobile Vertical Fallback */}
-      <div className="md:hidden flex flex-col items-center py-6">
-        <div className="relative border-l-2 border-gold/40 ml-4 py-2 space-y-8 w-full max-w-sm">
-          {nodes.map((node, i) => (
+      <div className="flex flex-col items-center py-6 md:hidden">
+        <div className="relative ml-4 w-full max-w-sm space-y-8 border-l-2 border-gold/40 py-2">
+          {nodes.map((node) => (
             <div key={`mobile-${node.id}`} className="relative pl-6">
               {/* Node Marker */}
-              <div className="absolute -left-[9px] top-0.5 h-4 w-4 rounded-full bg-surface-0 border-2 border-gold flex items-center justify-center">
-                <div className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+              <div className="absolute top-0.5 -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border-2 border-gold bg-surface-0">
+                <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
               </div>
-              
+
               {/* Content Card */}
               <div className="rounded-xl border border-surface-3/80 bg-surface-1/60 p-3.5 backdrop-blur-sm">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-semibold tracking-widest text-white uppercase">{node.label}</h4>
-                  <span className="text-[9px] font-mono text-gold bg-gold/10 px-2 py-0.5 rounded">{node.code}</span>
+                  <h4 className="text-xs font-semibold tracking-widest text-white uppercase">
+                    {node.label}
+                  </h4>
+                  <span className="rounded bg-gold/10 px-2 py-0.5 font-mono text-[9px] text-gold">
+                    {node.code}
+                  </span>
                 </div>
                 <div className="mt-2 flex flex-col gap-0.5">
-                  <span className="text-[10px] text-gold uppercase tracking-widest font-mono font-medium">
+                  <span className="font-mono text-[10px] font-medium tracking-widest text-gold uppercase">
                     {node.state}
                   </span>
-                  <p className="text-xs text-muted-foreground leading-relaxed mt-1">
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     {node.desc}
                   </p>
                 </div>

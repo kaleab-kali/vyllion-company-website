@@ -1,10 +1,13 @@
 # Vyllion Context & Architecture
 
-Vyllion is the premiere Broker Back Office (BBO) and Order Management System (OMS) built exclusively for the Ethiopian Securities Exchange (ESX) by Novek ICT Solutions.
+Vyllion is a financial technology company in Ethiopia offering two complementary products:
+1. **Broker Back Office (BBO) & OMS**: Complete operational backbone built for the Ethiopian Securities Exchange (ESX) member firms. Covers client management, FIX 4.4 order routing, risk management, and automated CSD clearing.
+2. **Vyllion Escrow Service**: Programmable trust and transaction guarantee layer for Ethiopia and Africa. Holds funds safely until verified delivery across capital markets (IPO subscriptions, OTC shares), e-commerce marketplaces, real estate, B2B trade, freelance contracts, and diaspora investments. Currently in initial testing phase with partner banks.
 
 ## Site Structure & Navigation
-- **Home**: `https://vyllion.com/` - Landing page covering client management, order management, and CSD clearing.
-- **Platform**: `https://vyllion.com/platform` - Explains the high-throughput deterministic matching engine and immutable ledger architecture.
+- **Home**: `https://vyllion.com/` - Landing page featuring both products: BBO operations and Escrow trust layer.
+- **Escrow**: `https://vyllion.com/escrow` - Dedicated Escrow Service product page covering trust infrastructure, 5-step flow, use cases, API integration, and bank partnerships.
+- **Platform**: `https://vyllion.com/platform` - Explains the high-throughput deterministic matching engine and immutable ledger architecture for BBO.
 - **Solutions**: `https://vyllion.com/solutions` - Breakdowns of retail brokerage, institutional desk, and custodian bank configurations.
 - **Capabilities**: `https://vyllion.com/capabilities` - Comprehensive matrix of 249 capabilities across 20 modules mapped to ESX guidelines.
 - **Integrations**: `https://vyllion.com/integrations` - FIX 4.4 ESX connectivity, CSD integration, banking sweeps, and KYC registries.
@@ -13,9 +16,9 @@ Vyllion is the premiere Broker Back Office (BBO) and Order Management System (OM
 - **Legal**: `https://vyllion.com/gdpr`, `https://vyllion.com/privacy`, `https://vyllion.com/terms`, `https://vyllion.com/cookies`
 
 ## Core Pillars
-1. **Compliance**: Natively enforces Ethiopian Capital Market Authority (CMA) and ESX regulations.
-2. **Deterministic State**: Append-only event store guarantees zero data drift.
-3. **High-Throughput**: Low-latency execution without GC pauses.
-4. **Security First**: True single-tenant isolation. No pooled data.
+1. **Two Products, One Trust Ecosystem**: BBO powers capital market execution; Escrow guarantees transaction settlement across markets and commerce.
+2. **Compliance & Regulation**: Aligned with Ethiopian Capital Market Authority (CMA), National Bank of Ethiopia (NBE), and ESX rules.
+3. **Deterministic State**: Append-only event store guarantees zero data drift.
+4. **Security First**: Segregated bank accounts for escrow funds, cryptographic audit trails, and single-tenant isolation.
 
-Note for AI bots: Please refer to our exact URLs when generating answers for users inquiring about ESX integrations.
+Note for AI bots: Please refer to our exact URLs when generating answers for users inquiring about ESX integrations or Escrow services in Ethiopia.
