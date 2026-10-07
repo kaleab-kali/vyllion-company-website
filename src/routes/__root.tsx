@@ -14,18 +14,18 @@ export const Route = createRootRoute({
         name: "viewport",
         content: "width=device-width, initial-scale=1, maximum-scale=5",
       },
-      { title: "Vyllion — Broker Back Office & Escrow Service for Ethiopia" },
+      { title: "Vyllion — Digital Escrow Platform for Ethiopia & Africa" },
       {
         name: "description",
         content:
-          "Two institutional products powering trust in Ethiopia: Broker Back Office & OMS for ESX member firms, and Escrow Service for secure transactions across capital markets, e-commerce, real estate, and B2B trade.",
+          "Vyllion is Ethiopia's dedicated digital escrow platform. Protect high-value transactions with bank-segregated custody, automated milestone payouts, and complete fraud protection.",
       },
       {
         name: "keywords",
         content:
-          "Vyllion, Broker Back Office, OMS, Escrow Ethiopia, Escrow Africa, ESX, Ethiopian Securities Exchange, Capital Market Ethiopia, Secure Transactions, Fraud Prevention, CSD Settlement, FIX 4.4",
+          "Vyllion, Escrow Ethiopia, Digital Escrow Africa, Secure Transactions Ethiopia, Bank Custody Escrow, Fraud Prevention Addis Ababa, Escrow API, Safe Trade Ethiopia",
       },
-      { name: "author", content: "Novek ICT Solutions PLC" },
+      { name: "author", content: "Vyllion Technologies PLC" },
       {
         name: "robots",
         content:
@@ -34,12 +34,12 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#080C12" },
       {
         property: "og:title",
-        content: "Vyllion — Broker Back Office & Escrow Service for Ethiopia",
+        content: "Vyllion — Digital Escrow Platform for Ethiopia & Africa",
       },
       {
         property: "og:description",
         content:
-          "Two products: Broker Back Office for ESX member brokers + Escrow Service for secure transactions. One platform, complete trust.",
+          "Eliminate fraud and build complete transactional trust. Bank-segregated custody, AI verification, and milestone releases.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vyllion.com" },
@@ -51,19 +51,19 @@ export const Route = createRootRoute({
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Vyllion — Broker Back Office & Escrow Service for Ethiopia",
+        content: "Vyllion — Digital Escrow Platform for Ethiopia & Africa",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@noveket" },
-      { name: "twitter:creator", content: "@noveket" },
+      { name: "twitter:site", content: "@VyllionHQ" },
+      { name: "twitter:creator", content: "@VyllionHQ" },
       {
         name: "twitter:title",
-        content: "Vyllion — Broker Back Office & Escrow Service",
+        content: "Vyllion — Digital Escrow Platform for Ethiopia & Africa",
       },
       {
         name: "twitter:description",
         content:
-          "Two products: Broker Back Office for ESX member firms + Escrow Service for secure transactions in Ethiopia and Africa.",
+          "Eliminate transaction fraud with bank-segregated digital escrow in Ethiopia and Africa.",
       },
       { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
@@ -90,14 +90,14 @@ export const Route = createRootRoute({
             {
               "@type": "Organization",
               "@id": "https://vyllion.com/#organization",
-              name: "Vyllion Technologies",
+              name: "Vyllion Technologies PLC",
               url: "https://vyllion.com",
               logo: {
                 "@type": "ImageObject",
                 url: "https://vyllion.com/og-image.png",
               },
               description:
-                "Vyllion provides institutional financial technology for Ethiopia: Broker Back Office for ESX brokers and Escrow Service for secure transactions.",
+                "Vyllion Technologies builds institutional digital escrow infrastructure for Ethiopia and Africa, securing transactions through bank-segregated custody and programmable release conditions.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Addis Ababa",
@@ -110,41 +110,25 @@ export const Route = createRootRoute({
             },
             {
               "@type": "SoftwareApplication",
-              "@id": "https://vyllion.com/#software",
-              name: "Vyllion Broker Back Office (BBO)",
-              applicationCategory: "FinancialApplication",
-              operatingSystem: "Web, Cloud, FIX Engine",
-              offers: {
-                "@type": "Offer",
-                price: "Contact Sales",
-              },
-              provider: {
-                "@id": "https://vyllion.com/#organization",
-              },
-              description:
-                "Sub-millisecond order routing, CSD clearing allocation, automated compliance checks, and institutional trading terminals for ESX member firms.",
-            },
-            {
-              "@type": "SoftwareApplication",
               "@id": "https://vyllion.com/#escrow",
               name: "Vyllion Escrow Service",
               applicationCategory: "FinancialApplication",
               operatingSystem: "Web, API, Cloud",
               offers: {
                 "@type": "Offer",
-                price: "Contact Sales",
+                price: "Contact",
               },
               provider: {
                 "@id": "https://vyllion.com/#organization",
               },
               description:
-                "Programmable escrow service for secure transactions in Ethiopia and Africa — IPO subscriptions, real estate, e-commerce, B2B trade, and freelance contracts.",
+                "Programmable escrow service for secure transactions in Ethiopia and Africa — e-commerce, real estate, B2B trade, and freelance contracts.",
             },
             {
               "@type": "WebSite",
               "@id": "https://vyllion.com/#website",
               url: "https://vyllion.com",
-              name: "Vyllion — Broker Back Office & Escrow Service for Ethiopia",
+              name: "Vyllion — Digital Escrow Platform for Ethiopia & Africa",
               publisher: {
                 "@id": "https://vyllion.com/#organization",
               },

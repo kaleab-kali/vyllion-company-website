@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BboRouteImport } from './routes/bbo'
 import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as EscrowRouteImport } from './routes/escrow'
@@ -25,6 +27,16 @@ import { Route as TermsRouteImport } from './routes/terms'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BboRoute = BboRouteImport.update({
+  id: '/bbo',
+  path: '/bbo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CapabilitiesRoute = CapabilitiesRouteImport.update({
@@ -85,6 +97,8 @@ const TermsRoute = TermsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bbo': typeof BboRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
   '/escrow': typeof EscrowRoute
@@ -99,6 +113,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bbo': typeof BboRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
   '/escrow': typeof EscrowRoute
@@ -114,6 +130,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/bbo': typeof BboRoute
   '/capabilities': typeof CapabilitiesRoute
   '/cookies': typeof CookiesRoute
   '/escrow': typeof EscrowRoute
@@ -130,6 +148,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/bbo'
     | '/capabilities'
     | '/cookies'
     | '/escrow'
@@ -144,6 +164,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/bbo'
     | '/capabilities'
     | '/cookies'
     | '/escrow'
@@ -158,6 +180,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/bbo'
     | '/capabilities'
     | '/cookies'
     | '/escrow'
@@ -173,6 +197,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BboRoute: typeof BboRoute
   CapabilitiesRoute: typeof CapabilitiesRoute
   CookiesRoute: typeof CookiesRoute
   EscrowRoute: typeof EscrowRoute
@@ -193,6 +219,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bbo': {
+      id: '/bbo'
+      path: '/bbo'
+      fullPath: '/bbo'
+      preLoaderRoute: typeof BboRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/capabilities': {
@@ -277,6 +317,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BboRoute: BboRoute,
   CapabilitiesRoute: CapabilitiesRoute,
   CookiesRoute: CookiesRoute,
   EscrowRoute: EscrowRoute,

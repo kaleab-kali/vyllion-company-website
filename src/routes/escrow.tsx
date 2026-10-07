@@ -19,7 +19,7 @@ export const Route = createFileRoute("/escrow")({
       {
         name: "keywords",
         content:
-          "escrow Ethiopia, escrow Africa, secure transactions, fraud prevention, marketplace escrow, IPO escrow, real estate escrow, payment protection, Vyllion, Novek ICT Solutions",
+          "escrow Ethiopia, escrow Africa, secure transactions, fraud prevention, marketplace escrow, real estate escrow, payment protection, Vyllion Technologies, Addis Ababa escrow",
       },
       {
         property: "og:title",
@@ -712,7 +712,7 @@ function EscrowCtaSection() {
   >("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
-  const mailtoFallbackUrl = `mailto:vyllion@novek.et?subject=${encodeURIComponent("Escrow Service Inquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nUse Case: ${formData.useCase}\nNotes: ${formData.notes}`)}`
+  const mailtoFallbackUrl = `mailto:contact@vyllion.com?subject=${encodeURIComponent("Escrow Service Inquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nCompany: ${formData.company}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nUse Case: ${formData.useCase}\nNotes: ${formData.notes}`)}`
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -748,7 +748,7 @@ function EscrowCtaSection() {
     } catch {
       setStatus("error")
       setErrorMessage(
-        "Could not submit the form. Please try the email link below or contact us directly at vyllion@novek.et"
+        "Could not submit the form. Please try the email link below or contact us directly at contact@vyllion.com"
       )
     }
   }
@@ -785,10 +785,10 @@ function EscrowCtaSection() {
             <div className="mt-6 border-t border-[#0EA5E9]/20 pt-4 font-mono text-xs text-[#0EA5E9]">
               Direct:{" "}
               <a
-                href="mailto:vyllion@novek.et"
+                href="mailto:contact@vyllion.com"
                 className="underline hover:text-white"
               >
-                vyllion@novek.et
+                contact@vyllion.com
               </a>{" "}
               • Addis Ababa, Ethiopia
             </div>

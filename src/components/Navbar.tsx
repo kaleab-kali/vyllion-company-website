@@ -13,6 +13,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleNavClick = (hash?: string) => {
+    if (hash && window.location.pathname === "/") {
+      const el = document.getElementById(hash)
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" })
+      }
+    }
+    setMobileMenuOpen(false)
+  }
+
   return (
     <nav
       id="navbar"
@@ -26,13 +36,13 @@ export function Navbar() {
         {/* Logo Section (Left) */}
         <div className="flex items-center pl-4 sm:pl-8">
           <Link to="/" className="group flex items-center gap-3">
-            <VyllionLogo className="h-8 w-8 text-[#C8B180] transition-transform group-hover:scale-105" />
+            <VyllionLogo className="h-8 w-8 text-[#0EA5E9] transition-transform group-hover:scale-105" />
             <div className="flex flex-col items-start">
               <span className="font-heading text-xl leading-none font-bold tracking-widest text-white">
                 VYLLION
               </span>
-              <span className="text-[8px] leading-tight font-medium tracking-[0.2em] text-[#94A3B8] uppercase">
-                Capital Markets Technology
+              <span className="text-[8px] leading-tight font-medium tracking-[0.2em] text-[#0EA5E9] uppercase">
+                Digital Escrow Platform
               </span>
             </div>
           </Link>
@@ -43,34 +53,38 @@ export function Navbar() {
 
         {/* Trapezoid Links Container (Right) */}
         <div className="hidden items-stretch md:flex">
-          {/* Extremely sharp trapezoid cut */}
-          <div className="relative flex h-full items-center border-l-2 border-[#C8B180]/80 bg-[#0B1220]/90 pr-8 pl-16 shadow-[inset_1px_0_0_0_rgba(255,255,255,0.05)] backdrop-blur-md [clip-path:polygon(32px_0,100%_0,100%_100%,0_100%)]">
-            <div className="mr-8 flex items-center gap-8">
+          <div className="relative flex h-full items-center border-l-2 border-[#0EA5E9]/50 bg-[#0B1220]/90 pr-8 pl-14 shadow-[inset_1px_0_0_0_rgba(255,255,255,0.05)] backdrop-blur-md [clip-path:polygon(32px_0,100%_0,100%_100%,0_100%)]">
+            <div className="mr-8 flex items-center gap-7">
               {[
-                { name: "Platform", path: "/platform" },
-                { name: "Solutions", path: "/solutions" },
-                { name: "Capabilities", path: "/capabilities" },
-                { name: "Integrations", path: "/integrations" },
-                { name: "Escrow", path: "/escrow" },
-                { name: "Security", path: "/security" },
-                { name: "Resources", path: "/resources" },
+                { name: "How It Works", path: "/", hash: "how-it-works" },
+                { name: "Use Cases", path: "/", hash: "use-cases" },
+                { name: "Bank Custody", path: "/", hash: "security" },
+                { name: "API", path: "/", hash: "api" },
+                { name: "About", path: "/about", hash: undefined },
+                { name: "Contact", path: "/", hash: "contact" },
               ].map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="text-[13px] font-bold tracking-[0.1em] text-[#94A3B8] uppercase transition-all hover:text-[#C8B180]"
-                  activeProps={{ className: "text-[#C8B180]" }}
+                  hash={item.hash}
+                  onClick={() => handleNavClick(item.hash)}
+                  className="text-[12px] font-bold tracking-[0.1em] text-[#94A3B8] uppercase transition-all hover:text-[#0EA5E9]"
+                  activeProps={{ className: "text-[#0EA5E9]" }}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-            <Link to="/" hash="cta">
+            <Link
+              to="/"
+              hash="contact"
+              onClick={() => handleNavClick("contact")}
+            >
               <Button
                 size="sm"
-                className="rounded-none border border-[#C8B180] bg-[#C8B180] px-8 py-5 text-[11px] font-bold tracking-wide text-[#080C12] uppercase hover:bg-[#C8B180]/90"
+                className="rounded-full bg-[#0EA5E9] px-6 py-4 text-[11px] font-bold tracking-wide text-white uppercase shadow-md shadow-[#0EA5E9]/20 hover:bg-[#0EA5E9]/90"
               >
-                Request a Demo
+                Start an Escrow
               </Button>
             </Link>
           </div>
@@ -100,29 +114,33 @@ export function Navbar() {
         <div className="border-t border-[#2C384A]/40 bg-[#0B1220]/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-2 px-4 py-4">
             {[
-              { name: "Platform", path: "/platform" },
-              { name: "Solutions", path: "/solutions" },
-              { name: "Capabilities", path: "/capabilities" },
-              { name: "Integrations", path: "/integrations" },
-              { name: "Escrow", path: "/escrow" },
-              { name: "Security", path: "/security" },
-              { name: "Resources", path: "/resources" },
+              { name: "How It Works", path: "/", hash: "how-it-works" },
+              { name: "Use Cases", path: "/", hash: "use-cases" },
+              { name: "Bank Custody", path: "/", hash: "security" },
+              { name: "API", path: "/", hash: "api" },
+              { name: "About Us", path: "/about", hash: undefined },
+              { name: "Contact", path: "/", hash: "contact" },
             ].map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
+                hash={item.hash}
                 className="rounded-lg px-3 py-3 text-left text-sm font-semibold tracking-wide text-[#94A3B8] uppercase transition-colors hover:bg-[#111620] hover:text-white"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => handleNavClick(item.hash)}
               >
                 {item.name}
               </Link>
             ))}
-            <Link to="/" hash="cta" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              to="/"
+              hash="contact"
+              onClick={() => handleNavClick("contact")}
+            >
               <Button
                 size="sm"
-                className="mt-4 w-full rounded-none bg-[#C8B180] py-6 font-bold tracking-widest text-[#080C12] uppercase hover:bg-[#C8B180]/90"
+                className="mt-4 w-full rounded-full bg-[#0EA5E9] py-5 font-bold tracking-widest text-white uppercase shadow-md shadow-[#0EA5E9]/20 hover:bg-[#0EA5E9]/90"
               >
-                Request a Demo
+                Start an Escrow
               </Button>
             </Link>
           </div>

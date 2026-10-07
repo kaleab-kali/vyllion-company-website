@@ -9,56 +9,88 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
-              <VyllionLogo className="h-8 w-8 text-[#C8B180]" />
+              <VyllionLogo className="h-8 w-8 text-[#0EA5E9]" />
               <span className="font-heading text-lg font-bold tracking-wide text-white">
                 Vyllion
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-[#94A3B8]">
-              Two institutional products powering trust in Ethiopia and Africa:
-              Broker Back Office (BBO) for capital markets and Escrow Service
-              for secure transactions.
+              Ethiopia&apos;s digital escrow infrastructure platform. Securing
+              transactions across e-commerce, real estate, and high-value
+              commerce through bank-segregated custody and programmable
+              milestone releases.
             </p>
           </div>
 
-          {/* Products */}
+          {/* Escrow Platform */}
           <div>
             <h4 className="font-sans text-[11px] font-bold tracking-widest text-[#E2E8F0] uppercase">
-              Products
+              Escrow Platform
             </h4>
             <div className="mt-6 flex flex-col gap-3">
               <Link
-                to="/platform"
-                className="flex items-center gap-1.5 text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                to="/"
+                hash="how-it-works"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#C8B180]" />
-                Broker Back Office
+                How It Works
               </Link>
               <Link
-                to="/escrow"
-                className="flex items-center gap-1.5 text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
+                to="/"
+                hash="use-cases"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0EA5E9]" />
-                Escrow Service
+                Use Cases
               </Link>
               <Link
-                to="/solutions"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                to="/"
+                hash="security"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
-                Solutions
+                Bank Custody & Security
               </Link>
               <Link
-                to="/capabilities"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                to="/"
+                hash="api"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
-                Capabilities
+                Developer API
+              </Link>
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-sans text-[11px] font-bold tracking-widest text-[#E2E8F0] uppercase">
+              Company
+            </h4>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                to="/about"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
+              >
+                About Us
               </Link>
               <Link
-                to="/integrations"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                to="/about"
+                hash="team"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
-                Integrations
+                Leadership Team
               </Link>
+              <Link
+                to="/about"
+                hash="banks"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
+              >
+                Bank Partnerships
+              </Link>
+              <a
+                href="mailto:contact@vyllion.com"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
+              >
+                contact@vyllion.com
+              </a>
             </div>
           </div>
 
@@ -70,54 +102,28 @@ export function Footer() {
             <div className="mt-6 flex flex-col gap-3">
               <Link
                 to="/gdpr"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
                 GDPR & Data Protection
               </Link>
               <Link
                 to="/terms"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
                 Terms of Service
               </Link>
               <Link
                 to="/privacy"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/cookies"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
+                className="text-[13px] text-[#64748B] transition-colors hover:text-[#0EA5E9]"
               >
                 Cookie Policy
               </Link>
-            </div>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="font-sans text-[11px] font-bold tracking-widest text-[#E2E8F0] uppercase">
-              Resources
-            </h4>
-            <div className="mt-6 flex flex-col gap-3">
-              <a
-                href="https://novek.et"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
-              >
-                Novek ICT Solutions
-              </a>
-              <a
-                href="mailto:info@novek.et"
-                className="text-[13px] text-[#64748B] transition-colors hover:text-[#C8B180]"
-              >
-                Contact Sales
-              </a>
-              <span className="cursor-not-allowed text-[13px] text-[#64748B]">
-                System Status
-              </span>
             </div>
           </div>
         </div>
@@ -126,22 +132,14 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-[11px] tracking-wider text-[#64748B] uppercase">
-            © {new Date().getFullYear()} Novek ICT Solutions PLC. All rights
+            © {new Date().getFullYear()} Vyllion Technologies PLC. All rights
             reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="text-[11px] font-medium tracking-widest text-[#94A3B8] uppercase">
-              Powered by
+              Addis Ababa, Ethiopia
             </span>
-            <a
-              href="https://novek.et"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-bold tracking-widest text-[#C8B180] uppercase transition-colors hover:text-white"
-            >
-              Novek ICT Solutions
-            </a>
-            <span className="ml-2 text-sm">🇪🇹</span>
+            <span className="ml-1 text-sm">🇪🇹</span>
           </div>
         </div>
       </div>

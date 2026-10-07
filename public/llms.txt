@@ -5,14 +5,10 @@ Vyllion is a financial technology company in Ethiopia offering two complementary
 2. **Vyllion Escrow Service**: Programmable trust and transaction guarantee layer for Ethiopia and Africa. Holds funds safely until verified delivery across capital markets (IPO subscriptions, OTC shares), e-commerce marketplaces, real estate, B2B trade, freelance contracts, and diaspora investments. Currently in initial testing phase with partner banks.
 
 ## Site Structure & Navigation
-- **Home**: `https://vyllion.com/` - Landing page featuring both products: BBO operations and Escrow trust layer.
+- **Home**: `https://vyllion.com/` - Ethiopia's First Digital Escrow Platform.
+- **About**: `https://vyllion.com/about` - About Vyllion Technologies PLC, founded in 2025 in Addis Ababa, bank partnerships, and executive leadership (CEO Kaleab Girma, CTO Ezana Tegener, CFO Selam Bruke).
 - **Escrow**: `https://vyllion.com/escrow` - Dedicated Escrow Service product page covering trust infrastructure, 5-step flow, use cases, API integration, and bank partnerships.
-- **Platform**: `https://vyllion.com/platform` - Explains the high-throughput deterministic matching engine and immutable ledger architecture for BBO.
-- **Solutions**: `https://vyllion.com/solutions` - Breakdowns of retail brokerage, institutional desk, and custodian bank configurations.
-- **Capabilities**: `https://vyllion.com/capabilities` - Comprehensive matrix of 249 capabilities across 20 modules mapped to ESX guidelines.
-- **Integrations**: `https://vyllion.com/integrations` - FIX 4.4 ESX connectivity, CSD integration, banking sweeps, and KYC registries.
-- **Security**: `https://vyllion.com/security` - Cryptographic audit trails, maker-checker authorization, and single-tenant infrastructure.
-- **Resources**: `https://vyllion.com/resources` - Product roadmap and ESXCOOBBO02 compliance matrix downloads.
+- **BBO**: `https://vyllion.com/bbo` - Broker Back Office & OMS platform for capital markets.
 - **Legal**: `https://vyllion.com/gdpr`, `https://vyllion.com/privacy`, `https://vyllion.com/terms`, `https://vyllion.com/cookies`
 
 ## Core Pillars
