@@ -6,12 +6,12 @@ export const Route = createFileRoute("/gdpr")({
     meta: [
       {
         title:
-          "GDPR & Data Protection Policy — Vyllion | Capital Markets Compliance",
+          "GDPR & Data Protection Policy — Vyllion | Digital Escrow Compliance",
       },
       {
         name: "description",
         content:
-          "Learn about Vyllion's GDPR compliance, data protection standards, and client data processing commitments for Ethiopian Securities Exchange (ESX) member firms.",
+          "Learn about Vyllion Technologies PLC's GDPR compliance, financial data protection standards, and client privacy commitments in Ethiopia and Africa.",
       },
       {
         property: "og:title",
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/gdpr")({
       {
         property: "og:description",
         content:
-          "Data processing commitments and regulatory data protection standards for ESX member brokerages.",
+          "Data protection, bank-grade encryption, and regulatory compliance standards for Vyllion Digital Escrow Platform.",
       },
       { property: "og:url", content: "https://vyllion.com/gdpr" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/gdpr")({
       {
         name: "twitter:description",
         content:
-          "Data processing commitments and regulatory data protection standards for ESX brokers.",
+          "Data protection and institutional escrow security standards for Vyllion Technologies PLC.",
       },
       { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
@@ -45,9 +45,9 @@ function GDPRPage() {
     <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6 lg:px-8">
       <div className="mb-12">
         <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          GDPR & Data Protection
+          GDPR &amp; Data Protection
         </h1>
-        <p className="mt-4 text-lg text-[#94A3B8]">Last updated: August 2026</p>
+        <p className="mt-4 text-lg text-[#94A3B8]">Last updated: October 2026</p>
       </div>
 
       <div className="prose prose-invert prose-blue max-w-none text-[#94A3B8]">
@@ -55,44 +55,41 @@ function GDPRPage() {
           1. Introduction
         </h2>
         <p className="mb-4 leading-relaxed">
-          At Novek ICT Solutions PLC ("we", "our", or "us"), we are committed to
-          protecting the privacy and security of personal data. This policy
-          outlines how Vyllion, our Broker Back Office and Order Management
-          System, processes personal data in compliance with the General Data
-          Protection Regulation (GDPR) and the Ethiopian data protection
-          framework.
+          At Vyllion Technologies PLC (&quot;Vyllion&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), we are committed to
+          protecting the privacy and security of personal and transaction data. This
+          policy outlines how our digital escrow platform processes data in
+          compliance with the General Data Protection Regulation (GDPR) and the
+          Ethiopian financial data protection framework.
         </p>
 
         <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
-          2. Role of Novek ICT Solutions
+          2. Escrow Data Architecture
         </h2>
         <p className="mb-4 leading-relaxed">
-          In the context of the Vyllion platform, Novek ICT Solutions acts
-          primarily as a <strong>Data Processor</strong>. The brokerage firms
-          utilizing Vyllion (our clients) are the{" "}
-          <strong>Data Controllers</strong>. We process personal data solely on
-          behalf of our clients and in accordance with their documented
-          instructions.
+          In the context of the Vyllion digital escrow platform, we process transaction
+          and identity verification data strictly to authenticate transacting parties,
+          verify milestone delivery conditions, and execute secure commercial bank payouts.
         </p>
 
         <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
-          3. Data Collection and Processing
+          3. Categories of Data Processed
         </h2>
         <p className="mb-4 leading-relaxed">
-          Vyllion processes various categories of personal data to facilitate
-          brokerage operations, including but not limited to:
+          Vyllion processes only the minimum data necessary to guarantee escrow execution:
         </p>
         <ul className="mb-4 list-disc space-y-2 pl-6">
           <li>
-            Identity Information (Names, national IDs, passports, addresses)
-            required for KYC compliance.
+            <strong>Identity &amp; KYC Records:</strong> Verified party names, phone
+            numbers, business credentials, and KYC tokens required under National Bank of
+            Ethiopia anti-fraud directives.
           </li>
           <li>
-            Financial Information (Bank accounts, transaction history, portfolio
-            holdings).
+            <strong>Custody &amp; Settlement Data:</strong> Segregated commercial bank account
+            identifiers, milestone amounts, and transaction release triggers.
           </li>
           <li>
-            System Data (IP addresses, login timestamps, audit trail actions).
+            <strong>Verification Logs:</strong> Cryptographic timestamps of deal creation,
+            fund deposit, inspection approvals, and dispute submissions.
           </li>
         </ul>
 
@@ -100,68 +97,44 @@ function GDPRPage() {
           4. Data Subject Rights
         </h2>
         <p className="mb-4 leading-relaxed">
-          Individuals have the following rights concerning their personal data:
+          Under GDPR principles and applicable local regulations, users maintain the right to:
         </p>
         <ul className="mb-4 list-disc space-y-2 pl-6">
-          <li>Right to access personal data held within the system.</li>
-          <li>Right to rectification of inaccurate or incomplete data.</li>
+          <li>Request access to personal data and escrow transaction histories.</li>
+          <li>Request rectification of inaccurate account details.</li>
           <li>
-            Right to erasure ("Right to be forgotten"), subject to financial
-            regulatory retention requirements.
+            Request erasure of non-financial records, subject to mandatory banking and
+            anti-money laundering retention laws.
           </li>
-          <li>Right to data portability.</li>
-        </ul>
-        <p className="mb-4 leading-relaxed">
-          Since Novek ICT Solutions is a Data Processor, data subjects should
-          direct their requests to exercise these rights to the respective
-          brokerage firm (the Data Controller).
-        </p>
-
-        <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
-          5. Security Measures
-        </h2>
-        <p className="mb-4 leading-relaxed">
-          Vyllion employs state-of-the-art security measures to ensure data
-          protection by design and by default:
-        </p>
-        <ul className="mb-4 list-disc space-y-2 pl-6">
-          <li>End-to-end encryption for data in transit and at rest.</li>
-          <li>
-            Strict role-based access controls (RBAC) and Maker-Checker
-            authorization workflows.
-          </li>
-          <li>
-            Immutable, hash-chained audit trails recording all data mutations.
-          </li>
-          <li>
-            Isolated, single-tenant infrastructure for each brokerage firm.
-          </li>
+          <li>Request data portability for transaction logs.</li>
         </ul>
 
         <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
-          6. Data Transfer and Sovereignty
+          5. Institutional Security Measures
         </h2>
         <p className="mb-4 leading-relaxed">
-          All personal data processed by Vyllion is hosted on infrastructure
-          located within the Federal Democratic Republic of Ethiopia. We
-          guarantee data sovereignty and do not transfer client financial data
-          across borders, ensuring full compliance with national directives and
-          the Ethiopian Securities Exchange (ESX) regulations.
+          Vyllion employs rigorous security controls to ensure data protection by design:
         </p>
+        <ul className="mb-4 list-disc space-y-2 pl-6">
+          <li>End-to-end encryption for all web and API data in transit (TLS 1.3).</li>
+          <li>AES-256 encryption at rest for sensitive transaction data.</li>
+          <li>Immutable cryptographic audit trails tracking every escrow status transition.</li>
+          <li>Multi-signature release authorization for high-value deal disbursements.</li>
+        </ul>
 
         <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
-          7. Contact Information
+          6. Contact Information
         </h2>
         <p className="mb-4 leading-relaxed">
-          For inquiries regarding our data protection practices, please contact
-          our Data Protection Officer at:
+          For inquiries regarding data protection and regulatory compliance, please
+          contact our Compliance Team at:
         </p>
         <p className="mb-4 rounded-md border border-[#2C384A]/60 bg-[#161B22] p-4 font-mono text-sm leading-relaxed">
-          Novek ICT Solutions PLC
+          Vyllion Technologies PLC
           <br />
           Addis Ababa, Ethiopia
           <br />
-          Email: compliance@novek.et
+          Email: compliance@vyllion.com / contact@vyllion.com
         </p>
       </div>
     </div>

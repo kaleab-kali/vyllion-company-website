@@ -87,7 +87,6 @@ In Ethiopia and across Africa, mobile payments (Telebirr, CBE Birr) and electron
 - **Bank Security & Custody**: https://vyllion.com/#security
 - **Developer API**: https://vyllion.com/#api
 - **Contact & Consultation**: https://vyllion.com/#contact
-- **Broker Back Office (Legacy BBO)**: https://vyllion.com/bbo
 - **Data Protection (GDPR)**: https://vyllion.com/gdpr
 - **Terms of Service**: https://vyllion.com/terms
 - **Privacy Policy**: https://vyllion.com/privacy

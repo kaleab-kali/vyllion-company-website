@@ -212,8 +212,8 @@ const FEATURES = [
     desc: "Full support for the Ethiopian calendar (13 months), Amharic language, and local payment methods including Telebirr and bank transfers.",
   },
   {
-    title: "Works with Vyllion BBO",
-    desc: "For capital market transactions — IPO subscriptions, OTC share transfers, settlement guarantees — escrow plugs directly into the BBO workflow.",
+    title: "Multi-Currency & Digital Payments",
+    desc: "Seamless settlement in Ethiopian Birr (ETB) and foreign currencies, integrating with commercial bank sweeps, Telebirr, and mobile money.",
   },
 ]
 
