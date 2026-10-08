@@ -39,7 +39,7 @@ export const Route = createRootRoute({
       {
         property: "og:description",
         content:
-          "Eliminate fraud and build complete transactional trust. Bank-segregated custody, AI verification, and milestone releases.",
+          "Eliminate fraud and build complete transactional trust. Bank-segregated custody, verified inspection windows, and milestone releases.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vyllion.com" },

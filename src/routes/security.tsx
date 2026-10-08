@@ -5,31 +5,23 @@ export const Route = createFileRoute("/security")({
   component: SecurityPage,
   head: () => ({
     meta: [
-      { title: "Security & Compliance — Vyllion | Cryptographic Audit Trails" },
+      { title: "Security & Bank Custody — Vyllion Digital Escrow" },
       {
         name: "description",
         content:
-          "Explore Vyllion's financial-grade security architecture: hash-chained audit stores, cryptographic maker-checker approvals, and strict single-tenant database isolation.",
+          "Explore Vyllion's financial security framework: segregated commercial bank custodial accounts, hash-chained audit trails, and strict multi-party contract isolation.",
       },
       {
         property: "og:title",
-        content: "Security & Compliance Architecture — Vyllion",
+        content: "Security & Bank Custody Architecture — Vyllion",
       },
       {
         property: "og:description",
         content:
-          "Mathematical certainty over every trade and ledger adjustment through tamper-evident cryptographic hash chains.",
+          "Certainty over every Birr held in escrow through segregated commercial bank custody and cryptographic audit logs.",
       },
       { property: "og:url", content: "https://vyllion.com/security" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Security & Compliance — Vyllion" },
-      {
-        name: "twitter:description",
-        content:
-          "Cryptographic audit stores, single-tenant isolation, and maker-checker workflows for capital markets.",
-      },
-      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com/security" }],
   }),
@@ -37,97 +29,64 @@ export const Route = createFileRoute("/security")({
 
 function SecurityPage() {
   return (
-    <div className="min-h-screen bg-[#080C12] pt-32 pb-32">
-      <div className="relative mx-auto mb-24 max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="animate-fade-up max-w-4xl">
-          <span className="mb-4 inline-block text-[11px] font-bold tracking-[0.2em] text-[#C8B180] uppercase">
-            Security & Compliance
+    <div className="min-h-screen bg-surface-0 pt-28 pb-32 text-foreground">
+      <div className="relative mx-auto mb-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            SECURITY &amp; CUSTODY ARCHITECTURE
           </span>
-          <h1 className="font-heading text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Trust through <br />
-            <span className="text-[#C8B180]">cryptography.</span>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Bank custody and cryptographic certainty.
           </h1>
-          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-[#94A3B8]">
-            In capital markets, security cannot be an afterthought. Vyllion
-            enforces mathematical certainty over every action through
-            hash-chained logs, strict role-based access controls, and true data
-            isolation.
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            In escrow, security is legal, financial, and architectural. Vyllion isolates client funds in segregated commercial bank accounts and records every deposit, inspection, and release in tamper-evident logs.
           </p>
         </div>
       </div>
 
-      <div className="animate-fade-up mx-auto mb-32 max-w-[1200px] px-4 delay-200 sm:px-6 lg:px-8">
+      <div className="mx-auto mb-28 max-w-7xl px-4 sm:px-6 lg:px-8">
         <CryptographicLedgerVisual />
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-24 gap-y-20 md:grid-cols-2">
-          <div className="animate-fade-up">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              1. Cryptographic Audit Trails
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:gap-16">
+          <div className="rounded-xl border border-surface-3 bg-surface-1 p-8">
+            <span className="font-mono text-xs font-semibold text-gold">01</span>
+            <h2 className="mt-3 text-xl font-semibold text-white">
+              Segregated Bank Account Custody
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              Vyllion utilizes tamper-evident, hash-chained audit logs. Every
-              critical system action—whether a trade execution or a
-              configuration change—generates a cryptographic hash that
-              incorporates the signature of the previous action.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              Any attempt to manually alter the database state breaks the
-              cryptographic chain, instantly alerting compliance officers. Your
-              regulatory evidence submitted to the Capital Market Authority
-              (CMA) is mathematically undeniable.
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              All transaction funds are held strictly within segregated custodial accounts at licensed partner commercial banks in Ethiopia. Vyllion never co-mingles client deposits with corporate operating capital, ensuring complete asset safety even in insolvency scenarios.
             </p>
           </div>
 
-          <div className="animate-fade-up delay-100">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              2. Maker-Checker Workflows
+          <div className="rounded-xl border border-surface-3 bg-surface-1 p-8">
+            <span className="font-mono text-xs font-semibold text-gold">02</span>
+            <h2 className="mt-3 text-xl font-semibold text-white">
+              Cryptographic Audit Trails
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              Financial risk demands human oversight. Every sensitive
-              configuration—from altering fee schedules to adjusting client risk
-              limits and margin rates—is protected by a strict 4-eyes principle.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              The "Maker" proposes the change, and an authorized "Checker" must
-              explicitly cryptographically sign and approve it before it takes
-              effect on the platform. No single rogue employee can bypass
-              systemic controls.
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              Every critical action—deal agreement, bank deposit sweep, inspection notice, dispute evidence submission, and release—generates a cryptographic hash chained to preceding events, making historical records unalterable.
             </p>
           </div>
 
-          <div className="animate-fade-up">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              3. Single-Tenant Isolation
+          <div className="rounded-xl border border-surface-3 bg-surface-1 p-8">
+            <span className="font-mono text-xs font-semibold text-gold">03</span>
+            <h2 className="mt-3 text-xl font-semibold text-white">
+              Tripartite Contract Isolation
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              We do not pool your firm's sensitive trading data with competitors
-              in a shared database schema. Vyllion employs strict single-tenant
-              isolation guarantees at the infrastructure level.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              Your client information, algorithmic trading strategies, and
-              proprietary order flow are completely logically separated,
-              eliminating any possibility of cross-contamination or unauthorized
-              data leakage.
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              Each escrow deal is governed by an independent tripartite legal agreement between the Buyer, Seller, and Vyllion as neutral escrow agent. Release conditions cannot be altered unilaterally by any single party.
             </p>
           </div>
 
-          <div className="animate-fade-up delay-100">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              4. Role-Based Access Control
+          <div className="rounded-xl border border-surface-3 bg-surface-1 p-8">
+            <span className="font-mono text-xs font-semibold text-gold">04</span>
+            <h2 className="mt-3 text-xl font-semibold text-white">
+              Maker-Checker Release Verification
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              Vyllion provides granular, effectively-dated Role-Based Access
-              Control (RBAC). This ensures that traders, risk managers, and
-              compliance officers only see and act upon what their specific role
-              and department permits.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              Access can be instantly revoked across all active sessions
-              system-wide, immediately freezing accounts in the event of
-              compromised credentials or termination.
+            <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+              High-value settlements require dual internal verification before triggering bank sweep disbursals. No single individual can initiate and release funds without multi-party digital authorization.
             </p>
           </div>
         </div>

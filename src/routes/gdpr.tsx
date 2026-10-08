@@ -42,15 +42,19 @@ export const Route = createFileRoute("/gdpr")({
 
 function GDPRPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mb-12">
-        <h1 className="font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          GDPR &amp; Data Protection
-        </h1>
-        <p className="mt-4 text-lg text-[#94A3B8]">Last updated: October 2026</p>
-      </div>
+    <div className="min-h-screen bg-surface-0 pt-28 pb-32 text-foreground">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            COMPLIANCE &amp; SECURITY
+          </span>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Data Protection &amp; Compliance
+          </h1>
+          <p className="mt-3 text-sm text-muted-foreground">Last updated: October 2026 • Addis Ababa, Ethiopia</p>
+        </div>
 
-      <div className="prose prose-invert prose-blue max-w-none text-[#94A3B8]">
+        <div className="prose prose-invert max-w-none text-xs leading-relaxed text-muted-foreground">
         <h2 className="mt-8 mb-4 text-2xl font-semibold text-white">
           1. Introduction
         </h2>
@@ -129,7 +133,7 @@ function GDPRPage() {
           For inquiries regarding data protection and regulatory compliance, please
           contact our Compliance Team at:
         </p>
-        <p className="mb-4 rounded-md border border-[#2C384A]/60 bg-[#161B22] p-4 font-mono text-sm leading-relaxed">
+        <p className="mb-4 rounded-md border border-surface-3 bg-surface-1 p-4 font-mono text-xs leading-relaxed text-muted-foreground">
           Vyllion Technologies PLC
           <br />
           Addis Ababa, Ethiopia
@@ -138,5 +142,7 @@ function GDPRPage() {
         </p>
       </div>
     </div>
+  </div>
   )
 }
+

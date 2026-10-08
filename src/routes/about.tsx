@@ -1,146 +1,43 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
-import { useEffect, useRef, useState } from "react"
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
       {
-        title: "About Vyllion — Building the Trust Layer for Ethiopia & Africa",
+        title: "About Vyllion — Building Institutional Trust for Ethiopian Commerce",
       },
       {
         name: "description",
         content:
-          "Founded in 2025 in Addis Ababa, Vyllion builds programmable escrow infrastructure to eliminate fraud and guarantee transactions across Ethiopia and Africa. Working closely with partner banks.",
+          "Vyllion Technologies builds independent digital escrow infrastructure in Addis Ababa, enabling secure, fraud-free transactions across Ethiopia through commercial bank custody.",
       },
       {
         name: "keywords",
         content:
-          "About Vyllion, Vyllion Escrow, Kaleab Girma, Ezana Tegener, Selam Bruke, Escrow Ethiopia, Fintech Ethiopia, Bank Escrow Africa",
+          "About Vyllion, Vyllion Escrow, Kaleab Girma, Ezana Tegener, Selam Bruke, Escrow Ethiopia, Fintech Addis Ababa",
       },
       {
         property: "og:title",
-        content:
-          "About Vyllion — Building the Trust Layer for Ethiopia & Africa",
+        content: "About Vyllion Technologies — Digital Escrow Platform",
       },
       {
         property: "og:description",
         content:
-          "Founded in 2025. Meet the leadership team behind Ethiopia's first programmable escrow platform.",
+          "Meet the leadership team and mission behind Ethiopia's dedicated digital escrow infrastructure.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vyllion.com/about" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "About Vyllion Technologies" },
-      {
-        name: "twitter:description",
-        content:
-          "Founded in 2025 in Addis Ababa. Working closely with partner banks to secure transactions across Africa.",
-      },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com/about" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "AboutPage",
-              "@id": "https://vyllion.com/about#webpage",
-              url: "https://vyllion.com/about",
-              name: "About Vyllion Technologies — Building the Trust Layer for Ethiopia & Africa",
-              description:
-                "Founded in 2025 in Addis Ababa, Vyllion Technologies builds digital escrow infrastructure in active testing with commercial banks, led by CEO Kaleab Girma, CTO Ezana Tegener, and CFO Selam Bruke.",
-              isPartOf: {
-                "@type": "WebSite",
-                "@id": "https://vyllion.com/#website",
-                name: "Vyllion",
-                url: "https://vyllion.com",
-              },
-              mainEntity: {
-                "@type": "Organization",
-                "@id": "https://vyllion.com/#organization",
-                name: "Vyllion Technologies PLC",
-                foundingDate: "2025",
-                foundingLocation: {
-                  "@type": "Place",
-                  name: "Addis Ababa, Ethiopia",
-                },
-                founders: [
-                  {
-                    "@type": "Person",
-                    name: "Kaleab Girma",
-                    jobTitle: "Chief Executive Officer (CEO)",
-                    description:
-                      "Leads corporate vision, banking partner integrations, and regulatory alignment.",
-                  },
-                  {
-                    "@type": "Person",
-                    name: "Ezana Tegener",
-                    jobTitle: "Chief Technology Officer (CTO)",
-                    description:
-                      "Directs core software architecture, multi-sign escrow verification, and security.",
-                  },
-                  {
-                    "@type": "Person",
-                    name: "Selam Bruke",
-                    jobTitle: "Chief Financial Officer (CFO)",
-                    description:
-                      "Oversees financial operations, segregated custodial accounts, and partner bank reconciliations.",
-                  },
-                ],
-              },
-            },
-            {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://vyllion.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "About Us",
-                  item: "https://vyllion.com/about",
-                },
-              ],
-            },
-          ],
-        }),
-      },
-    ],
   }),
 })
 
-function useScrollReveal() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(el)
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
-  return { ref, isVisible }
-}
-
+/* ═══════════════════════════════════════════════════════════════
+   LEADERSHIP PROFILES
+   ═══════════════════════════════════════════════════════════════ */
 const TEAM_MEMBERS = [
   {
     name: "Kaleab Girma",
@@ -148,15 +45,13 @@ const TEAM_MEMBERS = [
     initials: "KG",
     bio: "Leads company vision, banking partnerships, and strategic execution. Focused on building regulatory-compliant trust infrastructure that unlocks commercial potential across Ethiopia and East Africa.",
     focus: "Strategy & Banking Partnerships",
-    accent: "#0EA5E9",
   },
   {
     name: "Ezana Tegener",
     role: "Chief Technology Officer (CTO)",
     initials: "ET",
-    bio: "Directs technical architecture, escrow smart logic, and API platform. Built bank-grade transaction isolation, automated condition verification pipelines, and cryptographic audit trails.",
+    bio: "Directs technical architecture, multi-party condition verification, and security protocols. Engineered transaction isolation, automated condition verification pipelines, and cryptographic audit trails.",
     focus: "Core Architecture & Security",
-    accent: "#38BDF8",
   },
   {
     name: "Selam Bruke",
@@ -164,96 +59,46 @@ const TEAM_MEMBERS = [
     initials: "SB",
     bio: "Oversees financial governance, segregated custodial account compliance, and settlement reconciliation with commercial banking partners. Ensures every Birr in escrow is ring-fenced and auditable.",
     focus: "Financial Operations & Custody",
-    accent: "#0284C7",
   },
 ]
 
-const CORE_VALUES = [
-  {
-    title: "Neutrality First",
-    desc: "We never take sides. Vyllion operates purely on predefined, verifiable transaction conditions agreed by both parties.",
-    icon: "⚖️",
-  },
-  {
-    title: "Bank-Grade Custody",
-    desc: "Funds are held in segregated partner bank accounts. We never co-mingle escrow funds with company operational capital.",
-    icon: "🏛️",
-  },
-  {
-    title: "Auditability by Default",
-    desc: "Every deposit, verification milestone, dispute evidence, and payout is immutably logged with cryptographic timestamps.",
-    icon: "📜",
-  },
-  {
-    title: "Locally Engineered",
-    desc: "Built in Addis Ababa for Ethiopian business reality — supporting local banking sweeps, Telebirr, and legal contracts.",
-    icon: "🇪🇹",
-  },
-]
-
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT PAGE COMPONENT (4 CLEAN, NON-REPETITIVE SECTIONS)
+   ═══════════════════════════════════════════════════════════════ */
 function AboutPage() {
-  useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace("#", "")
-      setTimeout(() => {
-        const el = document.getElementById(id)
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" })
-        }
-      }, 100)
-    }
-
-    const handleHash = () => {
-      if (window.location.hash) {
-        const id = window.location.hash.replace("#", "")
-        const el = document.getElementById(id)
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" })
-        }
-      }
-    }
-
-    window.addEventListener("hashchange", handleHash)
-    return () => window.removeEventListener("hashchange", handleHash)
-  }, [])
-
   return (
-    <div className="min-h-svh w-full overflow-x-hidden bg-[#080C12] pt-24">
+    <div className="min-h-svh w-full bg-surface-0 text-foreground pt-20">
+      {/* 1. Mission & Hero Section */}
       <AboutHeroSection />
-      <StorySection />
-      <BankPartnershipSection />
-      <TeamSection />
-      <ValuesSection />
-      <AboutCtaSection />
+
+      {/* 2. The Ethiopian Trust Gap & Origin Story */}
+      <OriginStorySection />
+
+      {/* 3. Executive Leadership Team */}
+      <LeadershipSection />
+
+      {/* 4. Corporate Governance & Neutrality */}
+      <GovernanceSection />
     </div>
   )
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   1. MISSION HERO SECTION
+   ═══════════════════════════════════════════════════════════════ */
 function AboutHeroSection() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24">
-      <div className="pointer-events-none absolute top-1/4 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0EA5E9]/5 blur-[160px]" />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="animate-fade-up max-w-3xl">
-          <div className="mb-4 inline-flex items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#0EA5E9]/30 bg-[#0EA5E9]/10 px-3.5 py-1 text-[11px] font-semibold tracking-[0.2em] text-[#0EA5E9] uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0EA5E9]" />
-              ESTABLISHED 2025 • ADDIS ABABA
-            </span>
-          </div>
-
-          <h1 className="font-heading text-3xl leading-tight font-medium tracking-tight text-white sm:text-5xl lg:text-6xl">
-            We are building the{" "}
-            <span className="text-[#0EA5E9]">trust layer</span> for African
-            commerce.
+    <section className="border-b border-surface-3/40 bg-surface-0 py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            INSTITUTIONAL TRUST INFRASTRUCTURE
+          </span>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Building the trust layer for Ethiopian commerce.
           </h1>
-
-          <p className="mt-6 text-base leading-relaxed text-[#94A3B8] sm:text-lg">
-            Founded in 2025 in Addis Ababa, Vyllion Technologies was created to
-            solve a fundamental problem that holds back Ethiopian and African
-            trade: the complete absence of transactional trust between parties
-            who don't know each other.
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Vyllion Technologies was founded in Addis Ababa to resolve the central obstacle in Ethiopian trade: the absence of a neutral, bank-backed mechanism to protect buyers and sellers during high-value transactions.
           </p>
         </div>
       </div>
@@ -261,316 +106,197 @@ function AboutHeroSection() {
   )
 }
 
-function StorySection() {
-  const { ref, isVisible } = useScrollReveal()
-
+/* ═══════════════════════════════════════════════════════════════
+   2. THE ETHIOPIAN TRUST GAP & ORIGIN
+   ═══════════════════════════════════════════════════════════════ */
+function OriginStorySection() {
   return (
-    <section
-      ref={ref}
-      className="relative overflow-hidden border-t border-[#2C384A]/30 py-20"
-    >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          className={`grid grid-cols-1 items-center gap-12 transition-all duration-700 lg:grid-cols-2 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <div>
-            <span className="text-[11px] font-bold tracking-[0.2em] text-[#0EA5E9] uppercase">
-              OUR ORIGIN STORY
+    <section className="border-b border-surface-3/40 bg-surface-0/60 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          
+          <div className="lg:col-span-6">
+            <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+              THE COMMERCIAL DILEMMA
             </span>
-            <h2 className="mt-3 font-heading text-2xl leading-tight font-bold tracking-tight text-white sm:text-4xl">
-              Why we started Vyllion in 2025
+            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white">
+              Why fast money alone wasn't enough.
             </h2>
-            <div className="mt-6 space-y-4 text-sm leading-relaxed text-[#94A3B8] sm:text-base">
+            <div className="mt-6 space-y-4 text-xs leading-relaxed text-muted-foreground sm:text-sm">
               <p>
-                In Ethiopia, electronic bank transfers (EFT) and mobile money
-                made moving money fast — but they solved only half the problem.
-                If you send money to someone for goods, construction materials,
-                real estate, or remote contracts, you have zero recourse if they
-                don't deliver.
+                In Ethiopia, electronic bank transfers and mobile wallets revolutionized transaction speed. However, they only solved half of the equation.
               </p>
               <p>
-                There is no chargeback mechanism. Traditional court litigation
-                takes years. As a result, businesses restrict themselves to
-                small, cautious deals, and individuals get scammed daily on
-                social media marketplaces.
+                Moving money became instant, but ensuring that goods, titles, or services were actually delivered remained entirely unprotected. Once funds are transferred via P2P mobile money or direct bank wire, the buyer has zero recourse if the seller ghosts or delivers counterfeit items.
               </p>
               <p>
-                Our founders came together in 2025 to create a neutral digital
-                escrow institution: funds are safely deposited into a
-                ring-fenced account, conditions are systematically verified, and
-                payment only releases when both sides honor their word.
+                Conversely, sellers cannot risk dispatching valuable merchandise or transferring vehicle titles on credit because unpaid invoices and delayed settlements frequently collapse operating cash flow.
+              </p>
+              <p>
+                As a result, high-value trade in Ethiopia remained artificially restricted to people who already knew each other or to physical, cash-based handovers in Addis Ababa. Vyllion was engineered to bridge this divide through conditional, bank-segregated digital escrow.
               </p>
             </div>
           </div>
 
-          <div className="space-y-6 rounded-2xl border border-[#2C384A]/50 bg-[#0F141E] p-8 shadow-2xl">
-            <div className="border-b border-[#2C384A]/30 pb-4">
-              <span className="font-mono text-xs tracking-wider text-[#0EA5E9] uppercase">
-                FOUNDED
-              </span>
-              <div className="mt-1 text-2xl font-bold text-white">2025</div>
-              <div className="text-xs text-[#64748B]">
-                Addis Ababa, Ethiopia
-              </div>
-            </div>
+          <div className="space-y-6 rounded-xl border border-surface-3 bg-surface-1 p-8 lg:col-span-6">
+            <h3 className="font-heading text-lg font-semibold text-white">
+              The Vyllion Principle
+            </h3>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Commerce flourishes when neither side has to take uncalculated blind risk.
+            </p>
 
-            <div className="border-b border-[#2C384A]/30 pb-4">
-              <span className="font-mono text-xs tracking-wider text-[#0EA5E9] uppercase">
-                CURRENT MILESTONE
-              </span>
-              <div className="mt-1 text-lg font-bold text-white">
-                Phase 1 Bank Pilot & Testing
+            <div className="space-y-4 border-t border-surface-3/60 pt-4 text-xs">
+              <div className="flex items-start gap-3">
+                <span className="font-mono font-bold text-gold">01</span>
+                <div>
+                  <h4 className="font-semibold text-white">Guaranteed Payout to Sellers</h4>
+                  <p className="text-muted-foreground">Funds are verified in partner bank custody before dispatch, eliminating bad debt and phantom orders.</p>
+                </div>
               </div>
-              <div className="text-xs text-[#64748B]">
-                Close operational integration with licensed commercial banks
-              </div>
-            </div>
 
-            <div>
-              <span className="font-mono text-xs tracking-wider text-[#0EA5E9] uppercase">
-                CORE MISSION
-              </span>
-              <div className="mt-1 text-base font-semibold text-white">
-                Zero Scam Commerce
+              <div className="flex items-start gap-3">
+                <span className="font-mono font-bold text-gold">02</span>
+                <div>
+                  <h4 className="font-semibold text-white">Guaranteed Recourse for Buyers</h4>
+                  <p className="text-muted-foreground">Funds are released strictly upon inspection approval, giving buyers the certainty to trade across regional borders.</p>
+                </div>
               </div>
-              <div className="text-xs text-[#64748B]">
-                Making remote, cross-border, and marketplace trade 100%
-                fraud-proof
+
+              <div className="flex items-start gap-3">
+                <span className="font-mono font-bold text-gold">03</span>
+                <div>
+                  <h4 className="font-semibold text-white">Objective Dispute Adjudication</h4>
+                  <p className="text-muted-foreground">Clear contractual terms and fast neutral review eliminate multi-year commercial court deadlocks.</p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
   )
 }
 
-function BankPartnershipSection() {
-  const { ref, isVisible } = useScrollReveal()
-
+/* ═══════════════════════════════════════════════════════════════
+   3. EXECUTIVE LEADERSHIP SECTION
+   ═══════════════════════════════════════════════════════════════ */
+function LeadershipSection() {
   return (
-    <section
-      id="banks"
-      ref={ref}
-      className="relative overflow-hidden border-t border-[#2C384A]/30 bg-[#0A0E17] py-20"
-    >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          className={`mx-auto mb-14 max-w-3xl text-center transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <span className="text-[11px] font-bold tracking-[0.2em] text-[#0EA5E9] uppercase">
-            REGULATORY INTEGRITY & BANKING RAILS
+    <section id="team" className="border-b border-surface-3/40 bg-surface-0 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            LEADERSHIP & GOVERNANCE
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-white sm:text-4xl">
-            Working closely with partner banks
+          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            Executive Accountability
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#94A3B8] sm:text-base">
-            Escrow is only as reliable as its banking foundation. From day one
-            in 2025, Vyllion has been actively collaborating with licensed
-            commercial banks in Ethiopia to establish segregated custody
-            protocols.
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            Led by experienced software engineers and financial operators based in Addis Ababa, dedicated to financial integrity and security.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-[#2C384A]/50 bg-[#0F141E] p-6">
-            <div className="mb-3 text-2xl">🏦</div>
-            <h3 className="text-base font-bold text-white">
-              Segregated Custodial Accounts
-            </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#94A3B8] sm:text-sm">
-              Every escrow transaction is backed by segregated bank accounts at
-              partner financial institutions. Funds are never held on
-              unregulated balance sheets.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-[#2C384A]/50 bg-[#0F141E] p-6">
-            <div className="mb-3 text-2xl">🧪</div>
-            <h3 className="text-base font-bold text-white">
-              Active Testing Phase
-            </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#94A3B8] sm:text-sm">
-              We are currently running our Phase 1 operational testing program
-              with banking partners, validating instant sweep reconciliations
-              and multi-sign releases.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-[#2C384A]/50 bg-[#0F141E] p-6">
-            <div className="mb-3 text-2xl">🛡️</div>
-            <h3 className="text-base font-bold text-white">
-              Compliance & AML Monitoring
-            </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#94A3B8] sm:text-sm">
-              Rigorous transaction pattern analysis, fraud detection, and
-              regulatory reporting aligned with the National Bank of Ethiopia
-              (NBE) standards.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TeamSection() {
-  const { ref, isVisible } = useScrollReveal()
-
-  return (
-    <section
-      ref={ref}
-      id="team"
-      className="relative overflow-hidden border-t border-[#2C384A]/30 py-20"
-    >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          className={`mx-auto mb-16 max-w-3xl text-center transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <span className="text-[11px] font-bold tracking-[0.2em] text-[#0EA5E9] uppercase">
-            LEADERSHIP
-          </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-white sm:text-4xl">
-            Meet the team building Vyllion
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#94A3B8] sm:text-base">
-            Our leadership brings together deep engineering, banking operations,
-            and financial governance to redefine transactional trust in Africa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {TEAM_MEMBERS.map((member, idx) => (
+        <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {TEAM_MEMBERS.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col justify-between rounded-2xl border border-[#2C384A]/60 bg-[#0F141E] p-8 shadow-xl transition-all duration-300 hover:border-[#0EA5E9]/50 hover:bg-[#111827]"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(24px)",
-                transitionDelay: `${idx * 150}ms`,
-              }}
+              className="flex flex-col justify-between rounded-xl border border-surface-3 bg-surface-1 p-7"
             >
               <div>
-                <div className="mb-6 flex items-center gap-4">
-                  <div
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl font-heading text-lg font-bold text-white shadow-inner"
-                    style={{
-                      backgroundColor: `${member.accent}20`,
-                      border: `1.5px solid ${member.accent}50`,
-                    }}
-                  >
+                <div className="flex items-center gap-3.5 border-b border-surface-3/60 pb-5">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg border border-surface-3 bg-surface-0 font-mono text-sm font-bold text-gold">
                     {member.initials}
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-bold text-white">
+                    <h3 className="font-heading text-base font-semibold text-white">
                       {member.name}
                     </h3>
-                    <p className="mt-0.5 font-mono text-xs font-medium text-[#0EA5E9]">
+                    <div className="font-mono text-[11px] text-muted-foreground">
                       {member.role}
-                    </p>
+                    </div>
                   </div>
                 </div>
 
-                <p className="mb-6 text-[13px] leading-relaxed text-[#94A3B8]">
+                <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
                   {member.bio}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between border-t border-[#2C384A]/40 pt-4 text-xs text-[#64748B]">
-                <span className="font-mono text-[11px] tracking-wider uppercase">
-                  Primary Focus
+              <div className="mt-6 border-t border-surface-3/60 pt-3">
+                <span className="font-mono text-[10px] tracking-wider text-gold uppercase">
+                  {member.focus}
                 </span>
-                <span className="font-medium text-white">{member.focus}</span>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
 }
 
-function ValuesSection() {
-  const { ref, isVisible } = useScrollReveal()
-
+/* ═══════════════════════════════════════════════════════════════
+   4. CORPORATE GOVERNANCE & NEUTRALITY
+   ═══════════════════════════════════════════════════════════════ */
+function GovernanceSection() {
   return (
-    <section
-      ref={ref}
-      className="relative overflow-hidden border-t border-[#2C384A]/30 bg-[#0A0E17] py-20"
-    >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          className={`mx-auto mb-14 max-w-3xl text-center transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
-        >
-          <span className="text-[11px] font-bold tracking-[0.2em] text-[#0EA5E9] uppercase">
-            OPERATING PRINCIPLES
-          </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-white sm:text-4xl">
-            How we protect every transaction
-          </h2>
-        </div>
+    <section id="governance" className="bg-surface-0/60 py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          
+          <div>
+            <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+              INSTITUTIONAL INTEGRITY
+            </span>
+            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Strict neutrality by charter.
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Vyllion does not act as a merchant, broker, or financial speculator. Our charter requires strict neutrality: we hold funds exclusively on behalf of transaction participants in segregated accounts at licensed commercial banks in Ethiopia.
+            </p>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {CORE_VALUES.map((val) => (
-            <div
-              key={val.title}
-              className="rounded-xl border border-[#2C384A]/40 bg-[#0F141E] p-6"
-            >
-              <span className="text-2xl">{val.icon}</span>
-              <h3 className="mt-4 text-base font-bold text-white">
-                {val.title}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-[#94A3B8] sm:text-sm">
-                {val.desc}
-              </p>
+            <div className="mt-8 grid grid-cols-2 gap-4 text-xs">
+              <div className="rounded-lg border border-surface-3 bg-surface-1 p-4">
+                <div className="font-mono font-bold text-white">Zero Co-Mingling</div>
+                <p className="mt-1 text-muted-foreground">Client escrow funds are segregated from corporate operational accounts.</p>
+              </div>
+              <div className="rounded-lg border border-surface-3 bg-surface-1 p-4">
+                <div className="font-mono font-bold text-white">Audit Trails</div>
+                <p className="mt-1 text-muted-foreground">Cryptographic timestamp logs for every deposit, inspection, and release.</p>
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function AboutCtaSection() {
-  return (
-    <section className="relative border-t border-[#2C384A]/30 py-20">
-      <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl space-y-6">
-          <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl">
-            Ready to transact with absolute confidence?
-          </h2>
-          <p className="text-sm leading-relaxed text-[#94A3B8] sm:text-base">
-            Whether you run an e-commerce platform, facilitate property
-            transactions, or conduct high-value B2B trade, Vyllion Escrow
-            removes fraud from the equation.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 pt-2 sm:flex-row">
-            <Link to="/">
-              <Button
-                size="lg"
-                className="h-12 rounded-full bg-[#0EA5E9] px-8 text-sm font-semibold text-white shadow-lg shadow-[#0EA5E9]/20 hover:bg-[#0EA5E9]/90"
-              >
-                Explore Escrow Service →
-              </Button>
-            </Link>
-            <a href="mailto:contact@vyllion.com">
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 rounded-full border-[#2C384A] px-8 text-sm text-white hover:bg-[#1E293B]"
-              >
-                Contact Leadership
-              </Button>
-            </a>
           </div>
+
+          <div className="rounded-xl border border-surface-3 bg-surface-1 p-8 text-center sm:text-left">
+            <h3 className="font-heading text-lg font-semibold text-white">
+              Institutional & Banking Inquiries
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+              We welcome engagement from commercial banks, institutional platforms, commodity exchanges, and enterprise traders seeking structured escrow integration.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="mailto:contact@vyllion.com" className="w-full sm:w-auto">
+                <Button className="w-full rounded-lg bg-gold px-6 py-2.5 font-sans text-xs font-semibold tracking-wider text-surface-0 uppercase shadow-sm hover:bg-gold-hover">
+                  Contact Leadership Team →
+                </Button>
+              </a>
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full rounded-lg border-surface-3 bg-surface-0 px-6 py-2.5 font-sans text-xs font-semibold tracking-wider text-white uppercase hover:bg-surface-2">
+                  Request Early Access
+                </Button>
+              </Link>
+            </div>
+
+            <div className="mt-6 border-t border-surface-3/60 pt-4 font-mono text-[11px] text-muted-foreground">
+              Direct: contact@vyllion.com • Addis Ababa, Ethiopia
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

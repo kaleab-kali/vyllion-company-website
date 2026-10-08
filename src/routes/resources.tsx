@@ -1,137 +1,109 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
+import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/resources")({
   component: ResourcesPage,
   head: () => ({
     meta: [
-      { title: "Resources & ESX Documentation — Vyllion" },
+      { title: "Resources & Documentation — Vyllion Digital Escrow" },
       {
         name: "description",
         content:
-          "Access official ESX compliance matrices, BBO-DEV architecture documentation, vendor eligibility guidelines, and regulatory guides for Ethiopian securities brokers.",
+          "Escrow fee schedules, tripartite agreement templates, buyer & seller inspection checklists, and commercial bank custody protocols in Ethiopia.",
       },
-      {
-        property: "og:title",
-        content: "Resources & Regulatory Documentation — Vyllion",
-      },
+      { property: "og:title", content: "Escrow Resources & Documentation — Vyllion" },
       {
         property: "og:description",
         content:
-          "Compliance matrices, architecture whitepapers, and operational guides for Ethiopian securities brokers.",
+          "Escrow fee guidelines, legal templates, inspection checklists, and user guides.",
       },
       { property: "og:url", content: "https://vyllion.com/resources" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Resources & Compliance — Vyllion" },
-      {
-        name: "twitter:description",
-        content:
-          "Technical documentation and regulatory matrices for ESX member firms.",
-      },
-      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com/resources" }],
   }),
 })
 
+const RESOURCES = [
+  {
+    title: "Tripartite Escrow Agreement Template",
+    category: "LEGAL & CONTRACTS",
+    desc: "Standard three-party legal contract governing rights, obligations, inspection windows, and release conditions under Ethiopian law.",
+  },
+  {
+    title: "Buyer & Seller Inspection Guide",
+    category: "OPERATIONAL PROTOCOL",
+    desc: "How to define objective inspection criteria for automotive mechanical tests, property cadastre searches, and warehouse commodity verification.",
+  },
+  {
+    title: "Dispute Submission & Evidence Framework",
+    category: "ARBITRATION",
+    desc: "Step-by-step instructions for submitting waybills, diagnostic reports, and documentary evidence in the event of transaction disagreement.",
+  },
+  {
+    title: "Commercial Bank Custody Protocol",
+    category: "COMPLIANCE & CUSTODY",
+    desc: "Detailed documentation on how escrow funds are segregated, isolated, and audited with partner commercial banks in Ethiopia.",
+  },
+]
+
 function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-[#080C12] pt-32 pb-32">
-      <div className="relative mx-auto mb-24 max-w-[1200px] px-4 text-center sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C8B180]/5 blur-[120px]" />
-
-        <div className="animate-fade-up">
-          <span className="mb-4 inline-block text-[11px] font-bold tracking-[0.2em] text-[#C8B180] uppercase">
-            RESOURCES & ROADMAP
+    <div className="min-h-screen bg-surface-0 pt-28 pb-32 text-foreground">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            DOCUMENTATION &amp; GUIDES
           </span>
-          <h1 className="mx-auto max-w-4xl font-heading text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Knowledge is <span className="text-[#3B82F6]">leverage.</span>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Escrow resources and documentation.
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-xl leading-relaxed text-[#94A3B8]">
-            Access our exhaustive regulatory mapping against the ESX Vendor
-            Eligibility Guidelines, API documentation, and our upcoming feature
-            roadmap for the Ethiopian capital market.
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Practical resources, legal contracts, and operational guidelines to help buyers, sellers, and brokers conduct fraud-proof transactions in Ethiopia.
           </p>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8">
-        {/* Documents Section */}
-        <div className="grid grid-cols-1 gap-16 border-t border-[#2C384A]/30 pt-24 pb-24 md:grid-cols-2">
-          <div className="animate-fade-up">
-            <h2 className="mb-6 text-4xl font-bold text-white">
-              ESX Compliance Matrix
-            </h2>
-            <p className="mb-8 text-[16px] leading-relaxed text-[#94A3B8]">
-              Download the complete, line-by-line mapping of how Vyllion
-              satisfies the ESX BBO/OMS functional, technical, and security
-              requirements (ESXCOOBBO02).
-            </p>
-            <button className="inline-flex items-center justify-center border border-[#C8B180] bg-transparent px-8 py-4 text-[12px] font-bold tracking-widest text-[#C8B180] uppercase transition-colors hover:bg-[#C8B180] hover:text-[#080C12]">
-              Download PDF Report
-            </button>
-          </div>
+        {/* Resources Grid */}
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {RESOURCES.map((r) => (
+            <div key={r.title} className="rounded-xl border border-surface-3 bg-surface-1 p-8 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-[10px] font-semibold text-gold uppercase tracking-wider">
+                  {r.category}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold text-white">{r.title}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  {r.desc}
+                </p>
+              </div>
 
-          <div className="animate-fade-up delay-100">
-            <h2 className="mb-6 text-4xl font-bold text-white">
-              API Documentation
-            </h2>
-            <p className="mb-8 text-[16px] leading-relaxed text-[#94A3B8]">
-              Comprehensive technical documentation for our REST and GraphQL
-              interfaces, including strict authentication flows, WebSocket
-              subscriptions, and webhook signatures.
-            </p>
-            <button className="inline-flex items-center justify-center border border-[#3B82F6] bg-transparent px-8 py-4 text-[12px] font-bold tracking-widest text-[#3B82F6] uppercase transition-colors hover:bg-[#3B82F6] hover:text-[#080C12]">
-              View Developer Hub
-            </button>
-          </div>
+              <div className="mt-6 border-t border-surface-3/60 pt-4 flex items-center justify-between">
+                <span className="font-mono text-[11px] text-muted-foreground">PDF / Guide</span>
+                <Link to="/contact">
+                  <span className="text-xs font-semibold text-gold hover:underline">
+                    Request Document →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Roadmap Section */}
-        <div className="animate-fade-up border-t border-[#2C384A]/30 pt-24">
-          <div className="mb-20 text-center">
-            <h2 className="text-4xl font-bold text-white">Future Roadmap</h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[16px] text-[#94A3B8]">
-              Our engineering team is continuously extending the platform to
-              support new asset classes and complex institutional workflows.
-            </p>
+        {/* Consultation Callout */}
+        <div className="mt-16 rounded-xl border border-surface-3 bg-surface-1 p-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between">
+          <div>
+            <h3 className="text-base font-semibold text-white">Need a custom escrow agreement?</h3>
+            <p className="mt-1 text-xs text-muted-foreground">Our transaction officers can draft bespoke milestone clauses for your transaction.</p>
           </div>
-
-          <div className="grid grid-cols-1 gap-x-16 gap-y-24 md:grid-cols-2">
-            <div className="relative pt-6">
-              <div className="absolute top-0 left-0 h-1 w-12 bg-[#C8B180]"></div>
-              <span className="mb-2 block text-[12px] font-bold tracking-wider text-[#C8B180] uppercase">
-                Q4 2026
-              </span>
-              <h3 className="mb-4 text-2xl font-bold text-white">
-                Escrow-as-a-Service
-              </h3>
-              <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-                A fully automated escrow facility allowing institutional brokers
-                to lock client funds cryptographically prior to order placement.
-                This reduces clearing bank counterparty risk and drastically
-                streamlines IPO subscription allocations during high-demand
-                public offerings.
-              </p>
-            </div>
-
-            <div className="relative pt-6">
-              <div className="absolute top-0 left-0 h-1 w-12 bg-[#3B82F6]"></div>
-              <span className="mb-2 block text-[12px] font-bold tracking-wider text-[#3B82F6] uppercase">
-                Q1 2027
-              </span>
-              <h3 className="mb-4 text-2xl font-bold text-white">
-                Advanced Risk Analytics
-              </h3>
-              <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-                Real-time Value at Risk (VaR) calculations and multi-asset
-                margin simulation engines. These tools will empower brokerage
-                risk officers to anticipate capital requirements dynamically
-                before market open, based on live volatility metrics.
-              </p>
-            </div>
-          </div>
+          <Link to="/contact" className="mt-4 sm:mt-0 block">
+            <Button className="rounded-lg bg-gold px-6 py-2.5 font-sans text-xs font-semibold text-surface-0 uppercase shadow-sm hover:bg-gold-hover">
+              Contact Us →
+            </Button>
+          </Link>
         </div>
+
       </div>
     </div>
   )

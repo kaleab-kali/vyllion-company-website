@@ -1,103 +1,124 @@
-import { createFileRoute } from "@tanstack/react-router"
-import { CoreArchitectureEngine } from "@/components/CoreArchitectureEngine"
+import { createFileRoute, Link } from "@tanstack/react-router"
+import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/platform")({
   component: PlatformPage,
   head: () => ({
     meta: [
-      { title: "Platform Architecture — Vyllion | Broker Operating System" },
+      { title: "Platform Architecture — Vyllion Digital Escrow Engine" },
       {
         name: "description",
         content:
-          "Explore the core platform architecture of Vyllion. A highly resilient, deterministic broker operating system built for the Ethiopian Securities Exchange.",
+          "Deterministic state engine, multi-party custody isolation, and automated release mechanics powering Vyllion's Ethiopian digital escrow platform.",
       },
-      { property: "og:title", content: "Platform Architecture — Vyllion" },
+      { property: "og:title", content: "Escrow Platform Architecture — Vyllion" },
       {
         property: "og:description",
         content:
-          "Deterministic state machine, high-throughput matching logic, and immutable ledger built for ESX member firms.",
+          "Multi-party state machine, segregated bank account custody, and programmable inspection triggers in Ethiopia.",
       },
       { property: "og:url", content: "https://vyllion.com/platform" },
       { property: "og:image", content: "https://vyllion.com/og-image.png" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Platform Architecture — Vyllion" },
-      {
-        name: "twitter:description",
-        content:
-          "Deterministic state engine and high-throughput order routing for ESX.",
-      },
-      { name: "twitter:image", content: "https://vyllion.com/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://vyllion.com/platform" }],
   }),
 })
 
 function PlatformPage() {
+  const pillars = [
+    {
+      num: "01",
+      title: "Deterministic State Engine",
+      desc: "Every transaction progresses through strictly defined state transitions: DRAFT → FUNDED → DISPATCHED → INSPECTION_ACTIVE → RELEASED (or DISPUTE_PENDING → REFUNDED). Unilateral state changes are impossible.",
+    },
+    {
+      num: "02",
+      title: "Segregated Bank Custodial Vaults",
+      desc: "Funds do not sit in omnibus company balances. Each deal maps to an isolated sub-account with licensed commercial banking partners, audited against National Bank of Ethiopia directives.",
+    },
+    {
+      num: "03",
+      title: "Multi-Signature Milestone Triggers",
+      desc: "Complex contracts support multi-party authorizations: buyer inspection sign-off, third-party engineer verification, or digital municipal cadastre proofs before funds release.",
+    },
+    {
+      num: "04",
+      title: "Automated Reversal & Refund Fail-safes",
+      desc: "If seller dispatch fails within the agreed window, or if physical inspection conditions fail verification, the system executes automated bank sweep refunds back to the buyer.",
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-[#080C12] pt-32 pb-32">
-      <div className="relative mx-auto mb-24 max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="animate-fade-up max-w-4xl">
-          <span className="mb-4 inline-block text-[11px] font-bold tracking-[0.2em] text-[#C8B180] uppercase">
-            Platform Architecture
+    <div className="min-h-screen bg-surface-0 pt-28 pb-32 text-foreground">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="max-w-3xl">
+          <span className="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+            CORE ARCHITECTURE
           </span>
-          <h1 className="font-heading text-5xl leading-[1.1] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Engineered for <br />
-            <span className="text-[#C8B180]">absolute precision.</span>
+          <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            Engineered for deterministic settlement.
           </h1>
-          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-[#94A3B8]">
-            Vyllion provides the foundational infrastructure required to operate
-            a secure, high-throughput brokerage on the Ethiopian Securities
-            Exchange. Our architecture prioritizes deterministic execution,
-            ensuring that every financial action, state transition, and limit
-            check is mathematically verifiable and immutably recorded.
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            In escrow, software must guarantee that funds cannot move until objective contractual triggers are verified. Here is how Vyllion's transaction isolation architecture works.
           </p>
         </div>
-      </div>
 
-      <div className="animate-fade-up mx-auto mb-32 max-w-[1200px] px-4 delay-200 sm:px-6 lg:px-8">
-        <CoreArchitectureEngine />
-      </div>
-
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-24 md:grid-cols-2">
-          <div className="animate-fade-up">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              Deterministic State Management
+        {/* State Machine Overview */}
+        <div className="mt-16 rounded-xl border border-surface-3 bg-surface-1 p-8 sm:p-10">
+          <div className="border-b border-surface-3/60 pb-6">
+            <span className="font-mono text-xs font-semibold text-gold uppercase">
+              TRANSACTION LIFECYCLE STATE MACHINE
+            </span>
+            <h2 className="mt-2 text-xl font-semibold text-white">
+              Immutable Escrow State Progression
             </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              In financial systems, ambiguity introduces catastrophic risk.
-              Vyllion operates on a strictly deterministic state engine. This
-              means that given the exact same sequence of market data, client
-              orders, and administrative overrides, the system will reliably
-              reproduce the exact same financial state.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              By enforcing append-only event sourcing for all ledger
-              modifications, we eliminate data drift between your internal
-              balances and the CSD’s official records. Your books are always
-              mathematically sound and instantly auditable.
-            </p>
           </div>
 
-          <div className="animate-fade-up delay-100">
-            <h2 className="mb-6 text-3xl font-bold text-white">
-              High-Throughput Matching Logic
-            </h2>
-            <p className="mb-6 text-[16px] leading-relaxed text-[#94A3B8]">
-              Processing thousands of concurrent client orders requires an
-              architecture that does not succumb to memory bloat or garbage
-              collection pauses. Vyllion’s routing core is engineered to handle
-              massive order ingestion spikes during market open, validating
-              pre-trade risk and margin thresholds in microseconds.
-            </p>
-            <p className="text-[16px] leading-relaxed text-[#94A3B8]">
-              Our order management system interfaces natively with the ESX ATS,
-              guaranteeing that your institutional algorithms and retail volume
-              flows seamlessly to the exchange without bottlenecking your
-              internal infrastructure.
-            </p>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-5">
+            {[
+              { step: "01", name: "Agreement Draft", status: "Terms Defined" },
+              { step: "02", name: "Bank Sweep Lock", status: "Custody Active" },
+              { step: "03", name: "Fulfillment", status: "Waybill / Transfer" },
+              { step: "04", name: "Inspection Timer", status: "Active Window" },
+              { step: "05", name: "Settlement Release", status: "Disbursed / Refund" },
+            ].map((s) => (
+              <div key={s.step} className="rounded-lg border border-surface-3 bg-surface-0/60 p-4">
+                <span className="font-mono text-xs font-bold text-gold">{s.step}</span>
+                <div className="mt-1 text-sm font-semibold text-white">{s.name}</div>
+                <div className="mt-0.5 text-[11px] text-muted-foreground">{s.status}</div>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Pillars Grid */}
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+          {pillars.map((p) => (
+            <div key={p.num} className="rounded-xl border border-surface-3 bg-surface-1 p-8">
+              <span className="font-mono text-xs font-semibold text-gold">{p.num}</span>
+              <h3 className="mt-2 text-lg font-semibold text-white">{p.title}</h3>
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                {p.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 flex items-center justify-between rounded-xl border border-surface-3 bg-surface-1 p-8">
+          <div>
+            <h3 className="text-base font-semibold text-white">Exploring platform integration?</h3>
+            <p className="text-xs text-muted-foreground">Learn how our state machine and bank rails fit your marketplace or corporate flow.</p>
+          </div>
+          <Link to="/contact">
+            <Button className="rounded-lg bg-gold px-6 py-2.5 font-sans text-xs font-semibold text-surface-0 uppercase shadow-sm hover:bg-gold-hover">
+              Request Platform Access →
+            </Button>
+          </Link>
+        </div>
+
       </div>
     </div>
   )
